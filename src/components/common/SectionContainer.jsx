@@ -1,6 +1,10 @@
-export default function SectionContainer({ children, className = "" }) {
+export default function SectionContainer({
+  children,
+  className = "",
+  id = "",
+}) {
   return (
-    <section className={`w-full max-w-6xl mx-auto px-6 md:px-10 lg:px-16 ${className}`}>
+    <section id={id} className={`${className}`}>
       {children}
     </section>
   );
