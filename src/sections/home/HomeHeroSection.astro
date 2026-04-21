@@ -1,0 +1,67 @@
+---
+import CtaButton from "@/components/ui/CtaButton.astro";
+import LimitContainer from "@/components/common/LimitContainer.jsx";
+
+const { hero } = Astro.props;
+---
+
+<section
+  id="inicio"
+  class="relative flex min-h-screen items-center overflow-hidden bg-surface-container-low pb-20 pt-32">
+  <LimitContainer
+    className="relative z-10 grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
+    <div class="lg:col-span-7">
+      <h1
+        class="mb-8 font-headline text-5xl leading-[0.9] font-extrabold tracking-tighter text-primary lg:text-7xl">
+        <span class="text-secondary">{hero.highlight}</span>
+        {hero.title}
+      </h1>
+
+      <p
+        class="mb-12 max-w-xl text-xl leading-relaxed font-light text-on-surface-variant">
+        {hero.description}
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <CtaButton
+          href={hero.primaryCta.href}
+          label={hero.primaryCta.label}
+          variant="primary">
+          <span
+            class="absolute top-0 right-0 h-2 w-2 bg-secondary"
+            aria-hidden="true"></span>
+        </CtaButton>
+        <CtaButton
+          href={hero.secondaryCta.href}
+          label={hero.secondaryCta.label}
+          variant="ghost"
+        />
+      </div>
+    </div>
+
+    <div class="relative lg:col-span-5">
+      <figure
+        class="hero-mask relative aspect-4/5 overflow-hidden bg-primary-container shadow-2xl">
+        <img
+          src={hero.image.src}
+          alt={hero.image.alt}
+          class="h-full w-full object-cover opacity-60 mix-blend-overlay"
+          loading="eager"
+          decoding="async"
+        />
+        <div
+          class="absolute inset-0 bg-linear-to-tr from-primary to-transparent">
+        </div>
+      </figure>
+      <div
+        class="hero-mask absolute -bottom-8 -left-8 -z-10 h-48 w-48 bg-secondary/20"
+        aria-hidden="true">
+      </div>
+    </div>
+  </LimitContainer>
+
+  <div
+    class="absolute top-0 right-0 z-0 h-full w-2/5 translate-x-1/2 -skew-x-12 bg-surface-container-high"
+    aria-hidden="true">
+  </div>
+</section>

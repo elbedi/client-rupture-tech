@@ -1,9 +1,10 @@
 const siteConfig = {
-  title: "ELBEDI",
-  url: "https://elbedi.com",
+  title: "Rupture Technologies | Arquitectura Estrategica Digital",
+  url: "https://rupture.tech",
   lang: "es-MX",
-  theme: "dark",
-  description: "Framework base para sitios modernos y escalables.",
+  theme: "light",
+  description:
+    "Soluciones de alto valor utilizando la tecnologia como catalizador para redefinir el futuro de su organizacion.",
   mainImage: "/og-default.jpg",
   robots:
     "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",

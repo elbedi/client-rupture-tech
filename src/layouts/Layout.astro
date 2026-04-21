@@ -6,13 +6,18 @@ import site from "@/content/site";
 import Header from "@/layouts/partials/header.jsx";
 import Footer from "@/layouts/partials/footer.jsx";
 import LenisClientInit from "@/components/common/LenisClientInit.jsx";
+
+const {
+  title = siteConfig.title,
+  description = siteConfig.description,
+  bodyClass = "bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-white/10",
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang={siteConfig.lang}>
-  <Head />
-  <body
-    class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-white/10">
+  <Head title={title} description={description} />
+  <body class={bodyClass}>
     <Header brand={site.name} ctaLabel={site.ctaText} />
     <slot />
     <Footer brand={site.name} email={site.email} phone={site.phone} />

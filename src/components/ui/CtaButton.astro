@@ -1,0 +1,27 @@
+---
+const {
+  href = "#",
+  label,
+  variant = "primary",
+  className = "",
+  ariaLabel,
+} = Astro.props;
+
+const baseClass =
+  "inline-flex items-center justify-center px-8 py-5 font-headline text-sm font-bold uppercase tracking-widest transition-all duration-300";
+
+const variants = {
+  primary: "relative bg-primary text-on-primary hover:translate-x-1",
+  ghost:
+    "border border-outline-variant text-primary hover:bg-surface-container-high",
+  dark: "bg-primary-container px-6 py-3 text-xs text-on-primary-container hover:scale-95",
+};
+---
+
+<a
+  href={href}
+  aria-label={ariaLabel || label}
+  class:list={[baseClass, variants[variant] || variants.primary, className]}>
+  <span>{label}</span>
+  <slot />
+</a>

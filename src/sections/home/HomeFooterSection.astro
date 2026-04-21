@@ -1,0 +1,81 @@
+---
+import FooterLinksColumn from "@/components/common/FooterLinksColumn.astro";
+import LimitContainer from "@/components/common/LimitContainer.jsx";
+
+const { footer } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  id="contacto"
+  class="w-full border-t-4 border-sky-600 bg-slate-900 text-white">
+  <LimitContainer className="px-6 py-20 lg:px-8">
+    <div class="mb-20 grid grid-cols-1 gap-16 md:grid-cols-12">
+      <div class="md:col-span-4">
+        <p
+          class="mb-8 font-headline text-lg font-bold tracking-widest text-white uppercase">
+          {footer.brand}
+        </p>
+        <p class="mb-8 text-sm leading-relaxed font-light text-slate-400">
+          {footer.description}
+        </p>
+
+        <div class="flex gap-4">
+          {
+            footer.social.map((item) => (
+              <a
+                href={item.href}
+                class="flex h-10 w-10 items-center justify-center bg-slate-800 transition-colors hover:bg-sky-600"
+                aria-label={item.label}>
+                <span class="material-symbols-outlined text-sm">
+                  {item.icon}
+                </span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      {
+        footer.columns.map((column) => (
+          <FooterLinksColumn title={column.title} links={column.links} />
+        ))
+      }
+
+      <div class="md:col-span-4">
+        <h3
+          class="mb-8 text-[10px] font-bold tracking-[0.2em] text-sky-400 uppercase">
+          {footer.contact.title}
+        </h3>
+        <p class="mb-4 text-xs leading-relaxed font-light text-slate-400">
+          {footer.contact.address}
+        </p>
+        <p class="mb-2 font-headline text-sm font-bold text-white">
+          {footer.contact.email}
+        </p>
+        <p class="font-headline text-sm font-bold text-white">
+          {footer.contact.phone}
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="flex flex-col items-center justify-between gap-6 border-t border-slate-800 pt-12 md:flex-row">
+      <p class="font-body text-xs tracking-wide text-slate-500 uppercase">
+        {`${currentYear} ${footer.brand}. Arquitectura Estrategica Digital.`}
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-6 md:justify-end md:gap-8">
+        {
+          footer.legalLinks.map((item) => (
+            <a
+              href={item.href}
+              class="text-[10px] font-bold tracking-widest text-slate-400 uppercase transition-all duration-300 hover:text-sky-400">
+              {item.label}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </LimitContainer>
+</footer>

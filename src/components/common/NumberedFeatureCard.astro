@@ -1,0 +1,22 @@
+---
+const { number, title, description, highlighted = false } = Astro.props;
+---
+
+<article
+  class:list={[
+    "group relative border-l-2 border-surface-container-high p-12 transition-colors hover:bg-surface-container-low",
+    highlighted && "bg-surface-container-low/30",
+  ]}>
+  <span
+    class="mb-8 block font-headline text-5xl font-black text-surface-container-highest transition-colors group-hover:text-secondary">
+    {number}
+  </span>
+  <h3
+    class="mb-4 font-headline text-2xl font-bold tracking-tight text-primary uppercase">
+    {title}
+  </h3>
+  <p class="mb-8 font-light text-on-surface-variant">{description}</p>
+  <div
+    class="absolute bottom-0 left-0 h-1 w-0 bg-secondary transition-all duration-500 group-hover:w-full">
+  </div>
+</article>

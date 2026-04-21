@@ -1,0 +1,56 @@
+---
+import LimitContainer from "@/components/common/LimitContainer.jsx";
+
+const { valueProposition } = Astro.props;
+---
+
+<section
+  id="capacidades"
+  class="relative overflow-hidden bg-primary py-32 text-on-primary">
+  <LimitContainer
+    className="grid grid-cols-1 items-center gap-20 px-6 lg:grid-cols-2 lg:px-8">
+    <div>
+      <h2
+        class="mb-8 font-headline text-5xl leading-tight font-extrabold tracking-tighter">
+        {valueProposition.title}
+      </h2>
+      <p
+        class="mb-12 max-w-lg text-lg leading-relaxed font-light text-slate-400">
+        {valueProposition.description}
+      </p>
+
+      <dl class="grid grid-cols-2 gap-8">
+        {
+          valueProposition.stats.map((stat) => (
+            <div>
+              <dt class="text-xs font-bold tracking-widest text-slate-500 uppercase">
+                {stat.label}
+              </dt>
+              <dd class="mb-2 font-headline text-3xl font-black text-secondary">
+                {stat.value}
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+
+    <div class="relative">
+      <figure
+        class="angular-cut relative aspect-square overflow-hidden bg-surface-container">
+        <img
+          src={valueProposition.image.src}
+          alt={valueProposition.image.alt}
+          class="h-full w-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="absolute inset-0 bg-secondary/10"></div>
+      </figure>
+      <div
+        class="absolute -top-10 -right-10 h-40 w-40 border-t-4 border-r-4 border-secondary/40"
+        aria-hidden="true">
+      </div>
+    </div>
+  </LimitContainer>
+</section>

@@ -1,10 +1,28 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import HeroBasic from "@/components/home/Hero.jsx";
+import homeContent from "@/content/home";
+import HomeHeroSection from "@/sections/home/HomeHeroSection.astro";
+import HomeArchitectureSection from "@/sections/home/HomeArchitectureSection.astro";
+import HomeCapabilitiesSection from "@/sections/home/HomeCapabilitiesSection.astro";
+import HomeHighlightSection from "@/sections/home/HomeHighlightSection.astro";
+import HomePhilosophySection from "@/sections/home/HomePhilosophySection.astro";
+import HomeTrustStripSection from "@/sections/home/HomeTrustStripSection.astro";
+import HomeFooterSection from "@/sections/home/HomeFooterSection.astro";
 ---
 
 <Layout
-  title="ELBEDI Framework"
-  description="Framework base para producir páginas modernas y escalables.">
-  <HeroBasic client:load />
+  showHeader={false}
+  showFooter={false}
+  bodyClass="bg-surface font-body text-on-surface"
+  title="Rupture Technologies | Arquitectura Estrategica Digital"
+  description="Soluciones de alto valor utilizando la tecnologia como catalizador para redefinir el futuro de su organizacion.">
+  <main>
+    <HomeHeroSection hero={homeContent.hero} />
+    <HomeArchitectureSection architecture={homeContent.architecture} />
+    <HomeCapabilitiesSection capabilities={homeContent.capabilities} />
+    <HomeHighlightSection valueProposition={homeContent.valueProposition} />
+    <HomePhilosophySection philosophy={homeContent.philosophy} />
+    <HomeTrustStripSection trust={homeContent.trust} />
+  </main>
+  <HomeFooterSection footer={homeContent.footer} />
 </Layout>

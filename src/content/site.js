@@ -1,8 +1,8 @@
 const site = {
-  name: "ELBEDI",
-  email: "hola@elbedi.com",
-  phone: "+52 55 0000 0000",
-  ctaText: "Comienza tu proyecto",
+  name: "Rupture Technologies",
+  email: "hello@rupture.tech",
+  phone: "+34 900 123 456",
+  ctaText: "Agendar Consultoria",
 };
 
 export default site;

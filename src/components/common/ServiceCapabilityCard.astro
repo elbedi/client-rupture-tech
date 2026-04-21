@@ -1,0 +1,21 @@
+---
+const { icon, title, description } = Astro.props;
+---
+
+<article
+  class="group bg-white p-10 transition-colors duration-300 hover:bg-primary">
+  <div
+    class="mb-8 flex h-12 w-12 items-center justify-center bg-surface-container-high transition-colors group-hover:bg-secondary">
+    <span class="material-symbols-outlined text-primary group-hover:text-white"
+      >{icon}</span
+    >
+  </div>
+  <h3
+    class="mb-4 font-headline text-xl font-bold text-primary group-hover:text-white">
+    {title}
+  </h3>
+  <p
+    class="text-sm leading-relaxed text-on-surface-variant group-hover:text-slate-300">
+    {description}
+  </p>
+</article>

@@ -1,0 +1,23 @@
+---
+const { title, links = [] } = Astro.props;
+---
+
+<div class="md:col-span-2">
+  <h3
+    class="mb-8 text-[10px] font-bold tracking-[0.2em] text-sky-400 uppercase">
+    {title}
+  </h3>
+  <ul class="space-y-4">
+    {
+      links.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class="font-headline text-xs text-slate-400 uppercase transition-colors hover:text-sky-400">
+            {item.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
