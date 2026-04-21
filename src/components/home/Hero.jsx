@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
-import SectionContainer from "../../components/common/SectionContainer.jsx";
-import LimitContainer from "../../components/common/LimitContainer.jsx";
-import Button from "../../components/ui/Button.jsx";
-import { fadeUp } from "../../lib/animations.js";
+import SectionContainer from "@/components/common/SectionContainer.jsx";
+import LimitContainer from "@/components/common/LimitContainer.jsx";
+import Button from "@/components/ui/Button.jsx";
+import { fadeUp } from "@/lib/animations.js";
 
 export default function HeroBasic() {
   const headingRef = useRef(null);

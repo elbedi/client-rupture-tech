@@ -1,4 +1,4 @@
-import siteConfig from "../../config/siteConfig.js";
+import siteConfig from "@/config/siteConfig.js";
 
 export default function Head() {
   return (

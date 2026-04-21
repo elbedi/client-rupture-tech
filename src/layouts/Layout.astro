@@ -1,10 +1,11 @@
 ---
-import "../styles/global.css";
-import siteConfig from "../config/siteConfig.js";
-import Head from "./partials/head.jsx";
-import site from "../content/site";
-import Header from "./partials/header.jsx";
-import Footer from "./partials/footer.jsx";
+import "@/styles/global.css";
+import siteConfig from "@/config/siteConfig.js";
+import Head from "@/layouts/partials/head.jsx";
+import site from "@/content/site";
+import Header from "@/layouts/partials/header.jsx";
+import Footer from "@/layouts/partials/footer.jsx";
+import LenisClientInit from "@/components/common/LenisClientInit.jsx";
 ---
 
 <!doctype html>
@@ -15,10 +16,6 @@ import Footer from "./partials/footer.jsx";
     <Header brand={site.name} ctaLabel={site.ctaText} />
     <slot />
     <Footer brand={site.name} email={site.email} phone={site.phone} />
-
-    <script>
-      import { initLenis } from "../lib/lenis.js";
-      initLenis();
-    </script>
+    <LenisClientInit client:load />
   </body>
 </html>
