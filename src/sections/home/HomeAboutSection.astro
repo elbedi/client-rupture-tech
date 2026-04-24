@@ -1,0 +1,40 @@
+---
+import LimitContainer from "@/components/common/LimitContainer";
+
+const { about } = Astro.props;
+---
+
+<section id="about">
+  <div class="bg-slate-800 text-white">
+    <LimitContainer className="relative">
+      <div class="flex gap-5 max-lg:flex-col max-lg:items-center">
+        <div class="relative w-[50%] max-lg:w-full">
+          <div
+            class="absolute top-0 right-0 bg-slate-200 w-full h-full"
+            style="clip-path: polygon(38% 0, 100% 0, 80% 100%, 18% 100%)">
+          </div>
+          <img
+            src="/images/team.png"
+            alt="Imagen de la sección '¿Quiénes Somos?'"
+            class="w-full h-full object-contain object-bottom-right relative z-10"
+            style="clip-path: polygon(0% 0, 100% 0, 80% 100%, 0 100%)"
+          />
+        </div>
+        <div class="flex justify-end items-center py-30 max-lg:pt-10">
+          <div class="max-w-xl">
+            <h2
+              class="mb-8 font-headline text-5xl leading-tight font-extrabold tracking-tighter">
+              {about.title}
+            </h2>
+            <p class="mb-9 text-lg leading-relaxed font-light text-slate-300">
+              {about.description}
+            </p>
+            <p class="text-lg leading-relaxed font-light text-slate-300">
+              {about.subDescription}
+            </p>
+          </div>
+        </div>
+      </div>
+    </LimitContainer>
+  </div>
+</section>

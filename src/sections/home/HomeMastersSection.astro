@@ -1,0 +1,83 @@
+---
+import LimitContainer from "@/components/common/LimitContainer";
+
+const { masters } = Astro.props;
+---
+
+<section id="directivos" class="bg-white py-24 md:py-30">
+  <LimitContainer className="relative overflow-hidden px-6 lg:px-8">
+    <div
+      class="pointer-events-none absolute right-0 bottom-8 h-44 w-44 bg-blue-100/80"
+      style="clip-path: polygon(18% 0, 100% 0, 84% 100%, 0 76%);">
+    </div>
+
+    <div class="relative mb-12 max-w-3xl" data-reveal="masters-intro">
+      <p
+        class="mb-3 text-xs font-bold tracking-[0.28em] text-sky-700 uppercase">
+        {masters.kicker}
+      </p>
+      <h2
+        class="font-headline text-4xl leading-tight font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+        {masters.title}
+      </h2>
+      <p class="mt-5 text-base leading-relaxed text-slate-600 sm:text-lg">
+        {masters.description}
+      </p>
+    </div>
+
+    <div class="relative grid grid-cols-1 gap-8 md:grid-cols-2">
+      {
+        masters.items.map(
+          (master: {
+            name: string;
+            role: string;
+            bio: string;
+            focus: string;
+            urlImage: string;
+          }) => (
+            <article
+              data-reveal="master-card"
+              class="group relative rounded-3xl border border-slate-200 bg-slate-50 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-md overflow-hidden">
+              <div class="relative">
+                <div
+                  class="absolute h-full w-3/6 m-auto  bg-linear-to-br from-sky-100 via-blue-100 to-slate-100 z-0 left-15"
+                  style="clip-path: polygon(0% 0, 80% 0, 100% 100%, 20% 100%);"
+                />
+                <div class="pt-4 h-100">
+                  <img
+                    src={master.urlImage}
+                    alt={`Foto de ${master.name}`}
+                    class="h-full w-full m-auto rounded-2xl object-contain relative z-1"
+                  />
+                </div>
+              </div>
+              <div class="absolute w-full -mt-15 p-7 flex justify-between items-baseline max-sm:hidden">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-sky-400 bg-white/80 text-sm font-bold text-sky-700">
+                  {master.name
+                    .split(" ")
+                    .map((part) => part[0])
+                    .join("")
+                    .slice(0, 2)}
+                </div>
+                <div class="rounded-full bg-sky-600 px-3 py-1 text-[10px] font-semibold tracking-[0.15em] text-white uppercase">
+                  Directivo
+                </div>
+              </div>
+              <div class="p-7">
+                <h3 class="font-headline text-xl leading-tight font-bold text-slate-900">
+                  {master.name}
+                </h3>
+                <p class="mt-1 text-sm font-semibold tracking-wide text-sky-700 uppercase">
+                  {master.role}
+                </p>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600 sm:text-base">
+                  {master.bio}
+                </p>
+              </div>
+            </article>
+          ),
+        )
+      }
+    </div>
+  </LimitContainer>
+</section>

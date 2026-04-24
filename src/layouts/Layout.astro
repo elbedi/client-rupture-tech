@@ -6,6 +6,8 @@ import site from "@/content/site";
 import Header from "@/layouts/partials/header.jsx";
 import Footer from "@/layouts/partials/footer.jsx";
 import LenisClientInit from "@/components/common/LenisClientInit.jsx";
+import WhatsApp from "@/components/common/whatsApp.jsx";
+import ContactModalClient from "@/components/common/ContactModalClient.jsx";
 
 const {
   title = siteConfig.title,
@@ -18,9 +20,11 @@ const {
 <html lang={siteConfig.lang}>
   <Head title={title} description={description} />
   <body class={bodyClass}>
-    <Header brand={site.name} ctaLabel={site.ctaText} />
+    <Header brand={site.name} ctaLabel={site.ctaText} client:load />
     <slot />
     <Footer brand={site.name} email={site.email} phone={site.phone} />
+    <ContactModalClient client:load />
+    <WhatsApp phone={site.phone} client:load />
     <LenisClientInit client:load />
   </body>
 </html>

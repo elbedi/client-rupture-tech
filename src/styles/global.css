@@ -126,7 +126,7 @@
 }
 
 .hero-mask {
-	clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
+	clip-path: polygon(20% 0, 100% 0, 80% 100%, 0 100%);
 }
 
 .diagonal-divider {
@@ -146,4 +146,24 @@
 .prose-xl p {
 	font-size: 1rem;
 	line-height: 1.75;
+}
+
+@keyframes floatWhats {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-4px);
+	}
+}
+
+.image-content-service:hover{
+	clip-path:polygon(20% 0, 100% 0, 100% 100%, 0% 100%) !important;
+}
+.image-content-service:hover img{
+	transition: 0.1s ease-in;
+	filter: brightness(100%);
+	opacity: 1;
+	transform: scale(1.1);
 }

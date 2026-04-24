@@ -8,6 +8,10 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
+  redirects: {
+    "/home": "/",
+  },
+
   vite: {
     resolve: {
       alias: {

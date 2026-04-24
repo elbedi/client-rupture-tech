@@ -3,11 +3,13 @@ import Layout from "@/layouts/Layout.astro";
 import homeContent from "@/content/home";
 import HomeHeroSection from "@/sections/home/HomeHeroSection.astro";
 import HomeArchitectureSection from "@/sections/home/HomeArchitectureSection.astro";
-import HomeCapabilitiesSection from "@/sections/home/HomeCapabilitiesSection.astro";
+import HomeAboutSection from "@/sections/home/HomeAboutSection.astro";
+import HomeMastersSection from "@/sections/home/HomeMastersSection.astro";
+import HomeCapabilitiesSection from "@/sections/home/HomeCapabilitiesSection.jsx";
 import HomeHighlightSection from "@/sections/home/HomeHighlightSection.astro";
 import HomePhilosophySection from "@/sections/home/HomePhilosophySection.astro";
 import HomeTrustStripSection from "@/sections/home/HomeTrustStripSection.astro";
-import HomeFooterSection from "@/sections/home/HomeFooterSection.astro";
+import HomeKeyAnimationsClient from "@/components/home/HomeKeyAnimationsClient.jsx";
 ---
 
 <Layout
@@ -19,10 +21,15 @@ import HomeFooterSection from "@/sections/home/HomeFooterSection.astro";
   <main>
     <HomeHeroSection hero={homeContent.hero} />
     <HomeArchitectureSection architecture={homeContent.architecture} />
-    <HomeCapabilitiesSection capabilities={homeContent.capabilities} />
+    <HomeAboutSection about={homeContent.about} />
+    <HomeCapabilitiesSection
+      capabilities={homeContent.capabilities}
+      client:visible
+    />
     <HomeHighlightSection valueProposition={homeContent.valueProposition} />
-    <HomePhilosophySection philosophy={homeContent.philosophy} />
+    <HomePhilosophySection howWeDoIt={homeContent.howWeDoIt} />
     <HomeTrustStripSection trust={homeContent.trust} />
+    <HomeMastersSection masters={homeContent.masters} />
+    <HomeKeyAnimationsClient client:load />
   </main>
-  <HomeFooterSection footer={homeContent.footer} />
 </Layout>

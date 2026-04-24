@@ -7,25 +7,26 @@ const { hero } = Astro.props;
 
 <section
   id="inicio"
-  class="relative flex min-h-screen items-center overflow-hidden bg-surface-container-low pb-20 pt-32">
-  <LimitContainer
-    className="relative z-10 grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
-    <div class="lg:col-span-7">
+  class="relative flex min-h-screen items-center overflow-hidden bg-surface-container-low">
+  <LimitContainer className="relative z-10 ">
+    <div class="w-full max-w-2xl">
       <h1
-        class="mb-8 font-headline text-5xl leading-[0.9] font-extrabold tracking-tighter text-primary lg:text-7xl">
+        data-hero-load="title"
+        class="mb-8 font-headline text-5xl leading-[0.9] font-extrabold tracking-tighter text-primary lg:text-7xl text-balance">
         <span class="text-secondary">{hero.highlight}</span>
         {hero.title}
       </h1>
 
       <p
+        data-hero-load="copy"
         class="mb-12 max-w-xl text-xl leading-relaxed font-light text-on-surface-variant">
         {hero.description}
       </p>
 
-      <div class="flex flex-wrap gap-4">
+      <div data-hero-load="actions" class="flex flex-wrap gap-4">
         <CtaButton
-          href={hero.primaryCta.href}
           label={hero.primaryCta.label}
+          openContactModal={true}
           variant="primary">
           <span
             class="absolute top-0 right-0 h-2 w-2 bg-secondary"
@@ -38,30 +39,23 @@ const { hero } = Astro.props;
         />
       </div>
     </div>
-
-    <div class="relative lg:col-span-5">
-      <figure
-        class="hero-mask relative aspect-4/5 overflow-hidden bg-primary-container shadow-2xl">
-        <img
-          src={hero.image.src}
-          alt={hero.image.alt}
-          class="h-full w-full object-cover opacity-60 mix-blend-overlay"
-          loading="eager"
-          decoding="async"
-        />
-        <div
-          class="absolute inset-0 bg-linear-to-tr from-primary to-transparent">
-        </div>
-      </figure>
-      <div
-        class="hero-mask absolute -bottom-8 -left-8 -z-10 h-48 w-48 bg-secondary/20"
-        aria-hidden="true">
-      </div>
-    </div>
   </LimitContainer>
-
   <div
-    class="absolute top-0 right-0 z-0 h-full w-2/5 translate-x-1/2 -skew-x-12 bg-surface-container-high"
-    aria-hidden="true">
+    class="absolute right-10 max-lg:right-0 h-full w-1/2 max-lg:w-full max-lg:opacity-30">
+    <div
+      class="hero-mask relative overflow-hidden shadow-2xl w-full h-full bg-blue-900 z-1">
+      <video
+        src={hero.video.src}
+        autoplay
+        muted
+        loop
+        class="h-full w-full object-cover"
+        style=" filter: brightness(100%)  grayscale(100%); opacity: 0.5;"
+      ></video>
+    </div>
+    <div
+      class="hero-mask absolute bottom-0 -left-6 h-full w-full bg-secondary opacity-30 z-0"
+      aria-hidden="true">
+    </div>
   </div>
 </section>

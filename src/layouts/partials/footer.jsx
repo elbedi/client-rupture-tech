@@ -1,78 +1,104 @@
+import homeContent from "@/content/home";
 import LimitContainer from "@/components/common/LimitContainer.jsx";
 
-const defaultLinks = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Portafolio", href: "#portafolio" },
-  { label: "Contacto", href: "#contacto" },
-];
-
 export default function Footer({
-  brand = "ELBEDI",
-  email = "hola@elbedi.com",
-  phone = "+52 55 0000 0000",
-  links = defaultLinks,
+  brand,
+  email,
+  phone,
+  footer = homeContent.footer,
 }) {
-  const year = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
+  const footerData = {
+    ...footer,
+    brand: brand || footer.brand,
+    contact: {
+      ...footer.contact,
+      email: email || footer.contact.email,
+      phone: phone || footer.contact.phone,
+    },
+  };
 
   return (
-    <footer className="border-t border-white/10 bg-neutral-950">
-      <LimitContainer
-        size="6xl"
-        className="grid gap-8 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:px-8">
-        <div>
-          <p className="text-sm font-semibold tracking-[0.18em] text-neutral-100 uppercase">
-            {brand}
-          </p>
-          <p className="mt-3 max-w-xs text-sm text-neutral-400">
-            Construimos experiencias digitales modernas, escalables y centradas
-            en resultados.
-          </p>
-        </div>
+    <footer
+      id="contacto"
+      className="w-full border-t-4 border-sky-600 bg-slate-900 text-white">
+      <LimitContainer className="px-6 py-20 lg:px-8">
+        <div className="mb-20 grid grid-cols-1 gap-16 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <p className="mb-8 font-headline text-lg font-bold tracking-widest text-white uppercase">
+              {footerData.brand}
+            </p>
+            <p className="mb-8 text-sm leading-relaxed font-light text-slate-400">
+              {footerData.description}
+            </p>
 
-        <div>
-          <p className="text-sm font-medium text-neutral-200">Navegacion</p>
-          <ul className="mt-3 space-y-2">
-            {links.map((item) => (
-              <li key={`${item.href}-${item.label}`}>
+            <div className="flex gap-4">
+              {footerData.social.map((item) => (
                 <a
+                  key={`${item.label}-${item.href}`}
                   href={item.href}
-                  className="text-sm text-neutral-400 transition hover:text-white">
-                  {item.label}
+                  className="flex h-10 w-10 items-center justify-center bg-slate-800 transition-colors hover:bg-sky-600"
+                  aria-label={item.label}>
+                  <span className="material-symbols-outlined text-sm">
+                    {item.icon}
+                  </span>
                 </a>
-              </li>
-            ))}
-          </ul>
+              ))}
+            </div>
+          </div>
+
+          {footerData.columns.map((column) => (
+            <div key={column.title} className="md:col-span-2">
+              <h3 className="mb-8 text-[10px] font-bold tracking-[0.2em] text-sky-400 uppercase">
+                {column.title}
+              </h3>
+              <ul className="space-y-4">
+                {column.links.map((item) => (
+                  <li key={`${item.label}-${item.href}`}>
+                    <a
+                      href={item.href}
+                      className="font-headline text-xs text-slate-400 uppercase transition-colors hover:text-sky-400">
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          <div className="md:col-span-4">
+            <h3 className="mb-8 text-[10px] font-bold tracking-[0.2em] text-sky-400 uppercase">
+              {footerData.contact.title}
+            </h3>
+            <p className="mb-4 text-xs leading-relaxed font-light text-slate-400">
+              {footerData.contact.address}
+            </p>
+            <p className="mb-2 font-headline text-sm font-bold text-white">
+              {footerData.contact.email}
+            </p>
+            <p className="font-headline text-sm font-bold text-white">
+              {footerData.contact.phone}
+            </p>
+          </div>
         </div>
 
-        <div>
-          <p className="text-sm font-medium text-neutral-200">Contacto</p>
-          <ul className="mt-3 space-y-2 text-sm text-neutral-400">
-            <li>
+        <div className="flex flex-col items-center justify-between gap-6 border-t border-slate-800 pt-12 md:flex-row">
+          <p className="font-body text-xs tracking-wide text-slate-500 uppercase">
+            {`${currentYear} ${footerData.brand}. Arquitectura Estrategica Digital.`}
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-6 md:justify-end md:gap-8">
+            {footerData.legalLinks.map((item) => (
               <a
-                className="transition hover:text-white"
-                href={`mailto:${email}`}>
-                {email}
+                key={`${item.label}-${item.href}`}
+                href={item.href}
+                className="text-[10px] font-bold tracking-widest text-slate-400 uppercase transition-all duration-300 hover:text-sky-400">
+                {item.label}
               </a>
-            </li>
-            <li>
-              <a className="transition hover:text-white" href={`tel:${phone}`}>
-                {phone}
-              </a>
-            </li>
-          </ul>
+            ))}
+          </div>
         </div>
       </LimitContainer>
-
-      <div className="border-t border-white/10">
-        <LimitContainer
-          size="6xl"
-          className="flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <p className="text-xs text-neutral-500">
-            {year} {brand}. Todos los derechos reservados.
-          </p>
-        </LimitContainer>
-      </div>
     </footer>
   );
 }

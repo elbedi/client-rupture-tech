@@ -4,52 +4,51 @@ import LimitContainer from "@/components/common/LimitContainer.jsx";
 const { valueProposition } = Astro.props;
 ---
 
-<section
-  id="capacidades"
-  class="relative overflow-hidden bg-primary py-32 text-on-primary">
-  <LimitContainer
-    className="grid grid-cols-1 items-center gap-20 px-6 lg:grid-cols-2 lg:px-8">
-    <div>
-      <h2
-        class="mb-8 font-headline text-5xl leading-tight font-extrabold tracking-tighter">
-        {valueProposition.title}
-      </h2>
-      <p
-        class="mb-12 max-w-lg text-lg leading-relaxed font-light text-slate-400">
-        {valueProposition.description}
-      </p>
-
-      <dl class="grid grid-cols-2 gap-8">
-        {
-          valueProposition.stats.map((stat) => (
-            <div>
-              <dt class="text-xs font-bold tracking-widest text-slate-500 uppercase">
-                {stat.label}
-              </dt>
-              <dd class="mb-2 font-headline text-3xl font-black text-secondary">
-                {stat.value}
-              </dd>
-            </div>
-          ))
-        }
-      </dl>
+<section id="capacidades" class="relative bg-primary text-on-primary">
+  <div
+    class="absolute inset-0 h-full w-2/4 max-xl:w-2/5 z-0 max-lg:opacity-35 max-lg:w-4/5">
+    <div
+      class="absolute inset-0 left-6 w-full h-full bg-sky-600"
+      style="clip-path: polygon(100% 0%, 80% 50%, 100% 100%, 0 100%, 0 0);">
     </div>
+    <div
+      class="w-full h-full bg-blue-900 overflow-hidden"
+      style="clip-path: polygon(100% 0%, 80% 50%, 100% 100%, 0 100%, 0 0);">
+      <video
+        src="/videos/enterprise.mp4"
+        autoplay
+        muted
+        loop
+        class="h-svh object-cover grayscale opacity-30 fixed top-0 left-0 max-xl:translate-x-[-30%]"
+      ></video>
+    </div>
+  </div>
+  <LimitContainer className="py-15">
+    <div class="flex justify-end items-center min-h-svh relative z-1">
+      <div class="max-w-xl">
+        <h2
+          class="mb-8 font-headline text-5xl max-xl:text-4xl leading-tight font-extrabold tracking-tighter">
+          {valueProposition.title}
+        </h2>
+        <p
+          class="mb-12 max-w-lg text-lg max-xl:text-md leading-relaxed font-light text-slate-400">
+          {valueProposition.description}
+        </p>
 
-    <div class="relative">
-      <figure
-        class="angular-cut relative aspect-square overflow-hidden bg-surface-container">
-        <img
-          src={valueProposition.image.src}
-          alt={valueProposition.image.alt}
-          class="h-full w-full object-cover"
-          loading="lazy"
-          decoding="async"
-        />
-        <div class="absolute inset-0 bg-secondary/10"></div>
-      </figure>
-      <div
-        class="absolute -top-10 -right-10 h-40 w-40 border-t-4 border-r-4 border-secondary/40"
-        aria-hidden="true">
+        <dl class="grid grid-cols-2 gap-8">
+          {
+            valueProposition.stats.map((stat) => (
+              <div>
+                <dt class="text-xs font-bold tracking-widest text-slate-500 uppercase">
+                  {stat.label}
+                </dt>
+                <dd class="mb-2 font-headline text-3xl font-black text-secondary">
+                  {stat.value}
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
       </div>
     </div>
   </LimitContainer>

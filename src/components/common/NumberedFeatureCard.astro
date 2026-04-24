@@ -1,14 +1,46 @@
 ---
-const { number, title, description, highlighted = false } = Astro.props;
+const { number, title, description, tone } = Astro.props;
+
+const parsedNumber = Number.parseInt(String(number || ""), 10);
+const intensity = Number.isNaN(parsedNumber)
+  ? Math.min(Math.max(Number(tone) || 1, 1), 3)
+  : Math.min(Math.max(parsedNumber, 1), 3);
+
+const tonePalette = [
+  {
+    border: "border-sky-200/70",
+    background: "bg-slate-50/60",
+    number: "text-sky-600 group-hover:text-sky-500",
+    accent: "bg-sky-400",
+  },
+  {
+    border: "border-sky-400/70",
+    background: "bg-slate-100/60",
+    number: "text-sky-700 group-hover:text-sky-600",
+    accent: "bg-sky-600",
+  },
+  {
+    border: "border-sky-600/80",
+    background: "bg-slate-200/60",
+    number: "text-sky-800 group-hover:text-sky-700",
+    accent: "bg-sky-800",
+  },
+];
+
+const toneClasses = tonePalette[intensity - 1] || tonePalette[0];
 ---
 
 <article
   class:list={[
-    "group relative border-l-2 border-surface-container-high p-12 transition-colors hover:bg-surface-container-low",
-    highlighted && "bg-surface-container-low/30",
+    "group relative border-l-2 p-12 transition-colors",
+    toneClasses.border,
+    toneClasses.background,
   ]}>
   <span
-    class="mb-8 block font-headline text-5xl font-black text-surface-container-highest transition-colors group-hover:text-secondary">
+    class:list={[
+      "mb-8 block font-headline text-5xl font-black transition-colors",
+      toneClasses.number,
+    ]}>
     {number}
   </span>
   <h3
@@ -17,6 +49,13 @@ const { number, title, description, highlighted = false } = Astro.props;
   </h3>
   <p class="mb-8 font-light text-on-surface-variant">{description}</p>
   <div
-    class="absolute bottom-0 left-0 h-1 w-0 bg-secondary transition-all duration-500 group-hover:w-full">
+    class:list={[
+      "absolute bottom-0 left-0 h-1 w-0 transition-all duration-500 group-hover:w-full",
+      toneClasses.accent,
+    ]}>
+  </div>
+  <div
+    class="absolute bottom-6 right-6 text-sm underline text-end opacity-0 duration-600 group-hover:opacity-100 group-hover:translate-y-1">
+    <a href="" class="block p-4">Iniciar mi Arquitectura &gt; </a>
   </div>
 </article>

@@ -1,14 +1,15 @@
 ---
 const {
-  href = "#",
   label,
+  href,
   variant = "primary",
   className = "",
   ariaLabel,
+  openContactModal = false,
 } = Astro.props;
 
 const baseClass =
-  "inline-flex items-center justify-center px-8 py-5 font-headline text-sm font-bold uppercase tracking-widest transition-all duration-300";
+  "inline-flex items-center justify-center px-8 py-5 font-headline text-sm font-bold uppercase tracking-widest transition-all duration-300 cursor-pointer";
 
 const variants = {
   primary: "relative bg-primary text-on-primary hover:translate-x-1",
@@ -16,12 +17,33 @@ const variants = {
     "border border-outline-variant text-primary hover:bg-surface-container-high",
   dark: "bg-primary-container px-6 py-3 text-xs text-on-primary-container hover:scale-95",
 };
+
+const variantClass =
+  variant === "ghost"
+    ? variants.ghost
+    : variant === "dark"
+      ? variants.dark
+      : variants.primary;
 ---
 
-<a
-  href={href}
-  aria-label={ariaLabel || label}
-  class:list={[baseClass, variants[variant] || variants.primary, className]}>
-  <span>{label}</span>
-  <slot />
-</a>
+{
+  href ? (
+    <a
+      href={href}
+      aria-label={ariaLabel || label}
+      data-open-contact-modal={openContactModal ? "true" : undefined}
+      class:list={[baseClass, variantClass, className]}>
+      <span>{label}</span>
+      <slot />
+    </a>
+  ) : (
+    <button
+      type="button"
+      aria-label={ariaLabel || label}
+      data-open-contact-modal={openContactModal ? "true" : undefined}
+      class:list={[baseClass, variantClass, className]}>
+      <span>{label}</span>
+      <slot />
+    </button>
+  )
+}

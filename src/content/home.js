@@ -1,3 +1,5 @@
+import { url } from "astro:schema";
+
 const homeContent = {
   nav: {
     brand: "Rupture Technologies",
@@ -5,7 +7,7 @@ const homeContent = {
       { label: "Servicios", href: "#servicios" },
       { label: "Metodologia", href: "#arquitectura" },
       { label: "IA y Futuro", href: "#capacidades" },
-      { label: "Nosotros", href: "#filosofia" },
+      { label: "Como lo hacemos", href: "#como-lo-hacemos" },
       { label: "Casos de Exito", href: "#contacto" },
     ],
     cta: { label: "Agendar Consultoria", href: "#contacto" },
@@ -18,8 +20,8 @@ const homeContent = {
       "Soluciones de alto valor utilizando la tecnologia como catalizador para redefinir el futuro de su organizacion.",
     primaryCta: { label: "Agendar Consulta", href: "#contacto" },
     secondaryCta: { label: "Explorar Servicios", href: "#servicios" },
-    image: {
-      src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCutBMX7Vd6BGhHvnKld4OKHnuM-g8w_4K4EHl1ulEChl34MBVQm2mvqEgECb0ECYZ8PVFT8rNUuIvWf7xN5iWHbGWAZ9f7ddle5K90bW8gqpYoCE9kef61aC508jy-jlJp6gXFmO6C7Zn0COpv4h4PgguVsiQSvNQdub_4wWqnMa_jylb-Do1Y-Bjf2rmNRNQHYSOq-8BLWo1uZHm03neciz-tInJcz6ZzODObUYPUpUzKACZDu9kO3PT7DnQFS0nMjzq8O_xrVo4",
+    video: {
+      src: "/videos/hero-enterprise.mp4",
       alt: "Visualizacion abstracta de red digital con nodos y geometria en tonos azules.",
     },
   },
@@ -39,7 +41,6 @@ const homeContent = {
         title: "Soluciones a Medida",
         description:
           "Desarrollo de ecosistemas digitales disenados especificamente para resolver retos operativos complejos.",
-        highlighted: true,
       },
       {
         number: "03",
@@ -49,44 +50,64 @@ const homeContent = {
       },
     ],
   },
+  about: {
+    title: "¿Quienes Somos?",
+    description:
+      "Rupture Technologies es una empresa dedicada a la innovación digital, combinando estrategia y tecnología para impulsar el crecimiento de nuestros clientes.",
+    subDescription:
+      "Con un enfoque boutique, ofrecemos soluciones personalizadas que transforman organizaciones y generan valor real en el mercado.",
+  },
   capabilities: {
-    title: "Capacidades Centrales",
+    title: "Nuestros Servicios",
     items: [
+      {
+        icon: "link",
+        title: "Konektor",
+        description:
+          "Implementamos tecnologías emergentes como Inteligencia Artificial, Realidad Virtual y Aumentada, etc.",
+        urlImage: "/images/services/vr.webp",
+      },
+      {
+        icon: "campaign",
+        title: "Marketing Digital",
+        description:
+          "Estrategias digitales para potenciar la presencia online y maximizar el alcance de su marca.",
+        urlImage: "/images/services/marketing.webp",
+      },
       {
         icon: "transform",
         title: "Transformacion Digital",
         description:
           "Modernizamos su legado tecnologico con arquitecturas escalables y procesos optimizados.",
+        urlImage: "/images/services/digital-transform.webp",
       },
       {
         icon: "hub",
         title: "Integracion Tecnologica",
         description:
           "Conectamos sus sistemas dispersos en una infraestructura unica y coherente.",
+        urlImage: "/images/services/digital-integration.webp",
       },
       {
         icon: "settings_suggest",
         title: "Automatizacion de Procesos",
         description:
           "Eliminamos fricciones operativas mediante flujos de trabajo inteligentes y automatizados.",
+        urlImage: "/images/services/process-automatizacion.webp",
       },
       {
         icon: "psychology",
         title: "IA e Innovacion",
         description:
           "Implementacion de inteligencia artificial aplicada a la toma de decisiones criticas.",
-      },
-      {
-        icon: "view_in_ar",
-        title: "Experiencias VR/AR",
-        description:
-          "Diseno de entornos inmersivos para formacion, ventas y visualizacion de datos.",
+        urlImage: "/images/services/ia.webp",
       },
       {
         icon: "query_stats",
         title: "Consultoria de Negocios",
         description:
           "Acompanamiento ejecutivo para alinear la hoja de ruta tecnologica con los KPI financieros.",
+        urlImage: "/images/services/business.webp",
       },
     ],
   },
@@ -103,28 +124,77 @@ const homeContent = {
       alt: "Centro de datos con racks de servidores iluminados en azul.",
     },
   },
-  philosophy: {
-    kicker: "Filosofia Rupture",
-    title: "Boutique Digital de Innovacion",
-    paragraphs: [
-      "En un mundo saturado de soluciones genericas, Rupture Technologies opera como un estudio boutique. No creemos en el volumen, sino en el impacto. Nuestra estructura nos permite una adaptabilidad quirurgica frente a las fluctuaciones del mercado.",
-      "Entendemos que la verdadera disrupcion no proviene de usar la tecnologia mas nueva, sino de aplicar el pensamiento critico para reconfigurar como la tecnologia sirve al proposito humano y comercial.",
-    ],
-    pillars: [
+  howWeDoIt: {
+    kicker: "Metodo Rupture",
+    title: "¿Como lo hacemos?",
+    description:
+      "Proporcionamos soluciones de valor agregado utilizando la tecnologia como catalizador. Analizamos las necesidades de cada cliente, su mercado y sus objetivos para construir la mejor propuesta y llevar su operacion hacia una transformacion digital sostenible.",
+    steps: [
       {
-        title: "Adaptabilidad Aguda",
+        number: "01",
+        title: "Diagnostico Estrategico",
         description:
-          "Respondemos a los cambios de paradigma en tiempo real, integrando innovaciones antes que la competencia.",
+          "Evaluamos contexto, procesos y oportunidades para definir una hoja de ruta clara y medible.",
       },
       {
-        title: "Pensamiento Disruptivo",
+        number: "02",
+        title: "Propuesta de Alto Impacto",
         description:
-          "Cuestionamos el statu quo para encontrar soluciones que otros pasan por alto.",
+          "Disenamos una solucion personalizada que equilibra vision de negocio, tecnologia y ejecucion.",
+      },
+      {
+        number: "03",
+        title: "Implementacion y Evolucion",
+        description:
+          "Ejecutamos con acompanamiento continuo para asegurar adopcion, resultados y mejora permanente.",
       },
     ],
   },
   trust: {
-    logos: ["NEXUS.CO", "CORE_SYS", "DELTA.TECH", "PRIME_INT", "VORTEX.AI"],
+    logos: [
+      {
+        src: "/images/aliados/sforce.png",
+        alt: "Logo de Smart Force",
+        href: "https://smart-force.com/",
+      },
+      {
+        src: "/images/aliados/cincel.png",
+        alt: "Logo de Cincel",
+        href: "https://www.cincel.digital/",
+      },
+      {
+        src: "/images/aliados/buzone.png",
+        alt: "Logo de Buzon e",
+        href: "https://mibuzonreceptor.buzone.com.mx/cuentareceptora/portal/login.html#!/",
+      },
+      {
+        src: "/images/aliados/s4b.png",
+        alt: "Logo de Silent 4 Business",
+        href: "https://silent4business.com/",
+      },
+    ],
+  },
+  masters: {
+    kicker: "Equipo Directivo",
+    title: "Liderazgo que ejecuta vision",
+    description:
+      "Dos perfiles complementarios dirigen cada iniciativa: estrategia de negocio y ejecucion tecnologica de alto impacto.",
+    items: [
+      {
+        name: "Mariana Rios",
+        role: "Directora General",
+        bio: "Lidera la vision comercial y la relacion con clientes para convertir objetivos de negocio en hojas de ruta accionables.",
+        focus: "Estrategia, crecimiento y alianzas.",
+        urlImage: "/images/master-1.png",
+      },
+      {
+        name: "Andres Velasco",
+        role: "Director de Tecnologia",
+        bio: "Orquesta la arquitectura tecnica y la implementacion de soluciones digitales con enfoque en escalabilidad y resultados.",
+        focus: "Arquitectura, automatizacion e innovacion aplicada.",
+        urlImage: "/images/master-2.png",
+      },
+    ],
   },
   footer: {
     brand: "Rupture Technologies",
@@ -138,7 +208,7 @@ const homeContent = {
       {
         title: "Compania",
         links: [
-          { label: "Nosotros", href: "#filosofia" },
+          { label: "Como lo hacemos", href: "#como-lo-hacemos" },
           { label: "Servicios", href: "#servicios" },
           { label: "Metodologia", href: "#arquitectura" },
           { label: "Casos", href: "#contacto" },
@@ -149,7 +219,7 @@ const homeContent = {
         links: [
           { label: "IA Aplicada", href: "#capacidades" },
           { label: "Estructura IT", href: "#servicios" },
-          { label: "Innovacion", href: "#filosofia" },
+          { label: "Como lo hacemos", href: "#como-lo-hacemos" },
         ],
       },
     ],

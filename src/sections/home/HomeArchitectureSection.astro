@@ -8,29 +8,35 @@ const { architecture } = Astro.props;
 <section id="arquitectura" class="relative overflow-hidden bg-white py-32">
   <LimitContainer className="relative z-10 px-6 lg:px-8">
     <div
-      class="mb-24 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+      class="mb-24 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
       <div class="max-w-2xl">
         <h2
+          data-reveal="architecture-title"
           class="mb-6 font-headline text-4xl font-extrabold tracking-tighter text-primary md:text-5xl">
           {architecture.title}
         </h2>
         <div class="h-1 w-24 bg-secondary"></div>
       </div>
-      <p class="max-w-sm font-medium text-on-surface-variant">
+      <p
+        data-reveal="architecture-copy"
+        class="max-w-sm font-medium text-on-surface-variant max-lg:text-sm">
         {architecture.description}
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3">
+    <div class="grid grid-cols-1 lg:grid-cols-3">
       {
-        architecture.pillars.map((pillar) => (
-          <NumberedFeatureCard
-            number={pillar.number}
-            title={pillar.title}
-            description={pillar.description}
-            highlighted={pillar.highlighted}
-          />
-        ))
+        architecture.pillars.map(
+          (pillar: { number: string; title: string; description: string }) => (
+          <div data-reveal="pillar">
+            <NumberedFeatureCard
+              number={pillar.number}
+              title={pillar.title}
+              description={pillar.description}
+            />
+          </div>
+          ),
+        )
       }
     </div>
   </LimitContainer>

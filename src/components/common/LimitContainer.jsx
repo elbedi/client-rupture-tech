@@ -13,7 +13,7 @@ export default function LimitContainer({
   const maxWidthClass = widthBySize[size] || widthBySize["7xl"];
 
   return (
-    <Tag className={`${maxWidthClass} mx-auto w-full ${className}`}>
+    <Tag className={`${maxWidthClass} mx-auto w-9/10 ${className}`}>
       {children}
     </Tag>
   );
