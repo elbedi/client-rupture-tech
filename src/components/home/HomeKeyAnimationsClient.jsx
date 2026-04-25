@@ -5,7 +5,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const revealGroups = [
-  { selector: "[data-reveal='architecture-title'], [data-reveal='architecture-copy']", y: 24, stagger: 0.1 },
+  {
+    selector:
+      "[data-reveal='architecture-title'], [data-reveal='architecture-copy']",
+    y: 24,
+    stagger: 0.1,
+  },
   { selector: "[data-reveal='pillar']", y: 36, stagger: 0.14 },
   { selector: "[data-reveal='philosophy-intro']", y: 24, stagger: 0 },
   { selector: "[data-reveal='step']", y: 32, stagger: 0.14 },
@@ -19,7 +24,9 @@ export default function HomeKeyAnimationsClient() {
       return undefined;
     }
 
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
 
     if (prefersReducedMotion) {
       const heroElements = gsap.utils.toArray("[data-hero-load]");

@@ -28,13 +28,13 @@ const { architecture } = Astro.props;
       {
         architecture.pillars.map(
           (pillar: { number: string; title: string; description: string }) => (
-          <div data-reveal="pillar">
-            <NumberedFeatureCard
-              number={pillar.number}
-              title={pillar.title}
-              description={pillar.description}
-            />
-          </div>
+            <div data-reveal="pillar">
+              <NumberedFeatureCard
+                number={pillar.number}
+                title={pillar.title}
+                description={pillar.description}
+              />
+            </div>
           ),
         )
       }
