@@ -5,6 +5,7 @@ const {
   variant = "primary",
   className = "",
   ariaLabel,
+  title,
   openContactModal = false,
 } = Astro.props;
 
@@ -31,6 +32,7 @@ const variantClass =
     <a
       href={href}
       aria-label={ariaLabel || label}
+      title={title || label}
       data-open-contact-modal={openContactModal ? "true" : undefined}
       class:list={[baseClass, variantClass, className]}>
       <span>{label}</span>
@@ -40,6 +42,7 @@ const variantClass =
     <button
       type="button"
       aria-label={ariaLabel || label}
+      title={title || label}
       data-open-contact-modal={openContactModal ? "true" : undefined}
       class:list={[baseClass, variantClass, className]}>
       <span>{label}</span>

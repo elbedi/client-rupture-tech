@@ -37,6 +37,7 @@ export default function Footer({
                 <a
                   key={`${item.label}-${item.href}`}
                   href={item.href}
+                  title={item.label}
                   className="flex h-10 w-10 items-center justify-center bg-slate-800 transition-colors hover:bg-sky-600"
                   aria-label={item.label}>
                   <span className="material-symbols-outlined text-sm">
@@ -57,6 +58,7 @@ export default function Footer({
                   <li key={`${item.label}-${item.href}`}>
                     <a
                       href={item.href}
+                      title={item.label}
                       className="font-headline text-xs text-slate-400 uppercase transition-colors hover:text-sky-400">
                       {item.label}
                     </a>
@@ -84,7 +86,7 @@ export default function Footer({
 
         <div className="flex flex-col items-center justify-between gap-6 border-t border-slate-800 pt-12 md:flex-row">
           <p className="font-body text-xs tracking-wide text-slate-500 uppercase">
-            {`${currentYear} ${footerData.brand}. Arquitectura Estrategica Digital.`}
+            {`${currentYear} ${footerData.brand}. Arquitectura Estratégica Digital.`}
           </p>
 
           <div className="flex flex-wrap justify-center gap-6 md:justify-end md:gap-8">
@@ -92,6 +94,7 @@ export default function Footer({
               <a
                 key={`${item.label}-${item.href}`}
                 href={item.href}
+                title={item.label}
                 className="text-[10px] font-bold tracking-widest text-slate-400 uppercase transition-all duration-300 hover:text-sky-400">
                 {item.label}
               </a>

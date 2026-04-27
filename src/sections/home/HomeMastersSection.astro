@@ -47,6 +47,8 @@ const { masters } = Astro.props;
                   <img
                     src={master.urlImage}
                     alt={`Foto de ${master.name}`}
+                    loading="lazy"
+                    decoding="async"
                     class="h-full w-full m-auto rounded-2xl object-contain relative z-1"
                   />
                 </div>

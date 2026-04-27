@@ -18,6 +18,14 @@ export default function ServiceCapabilityCard({
         <p className="text-sm leading-relaxed text-on-surface-variant group-hover:text-slate-300">
           {description}
         </p>
+        <a
+          href="https://wa.me/5215512345678?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Más información sobre ${title}`}
+          className="mt-6 inline-flex items-center justify-center border border-outline-variant px-8 py-3 font-headline text-sm font-bold uppercase tracking-widest text-primary transition-all duration-300 hover:bg-surface-container-high group-hover:text-white">
+          Mas información
+        </a>
       </div>
       <div
         className="image-content-service w-full h-full bg-slate-700 duration-100 ease-in max-md:absolute z-0 max-md:opacity-20"
@@ -25,6 +33,8 @@ export default function ServiceCapabilityCard({
         <img
           src={urlImage}
           alt={title}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover grayscale brightness-150 opacity-50"
         />
       </div>

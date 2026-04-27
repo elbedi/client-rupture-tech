@@ -11,7 +11,7 @@ export default function Header({
   brand = "ELBEDI",
   brandHref = "#inicio",
   links = defaultLinks,
-  ctaLabel = "Agendar Consultoria",
+  ctaLabel = "Agendar consultoría",
   ctaHref = "#contacto",
 }) {
   const [activeHref, setActiveHref] = useState("");
@@ -70,15 +70,22 @@ export default function Header({
             <div className="flex items-center justify-between">
               <a
                 href={brandHref}
+                title={`Ir al inicio de ${brand}`}
                 className="flex gap-6 items-center text-slate-900 uppercase dark:text-slate-50">
                 <img
                   src="/images/isotipo.png"
                   alt="Rupture Technologies Isotipo"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
                   className="h-8 grayscale brightness-500"
                 />
                 <img
                   src="/images/text-logo.png"
                   alt="Rupture Technologies Logotipo"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
                   className="h-6 grayscale brightness-500 opacity-80 max-md:hidden"
                 />
               </a>
@@ -86,11 +93,12 @@ export default function Header({
               <div className="flex items-center gap-15">
                 <ul
                   className=" items-center gap-10 flex max-lg:hidden"
-                  aria-label="Navegacion principal">
+                  aria-label="Navegación principal">
                   {links.map((item) => (
                     <li key={`${item.href}-${item.label}`}>
                       <a
                         href={item.href}
+                        title={`Ir a ${item.label}`}
                         className={[
                           "font-headline text-sm font-bold tracking-tighter uppercase transition-colors duration-200",
                           activeHref === item.href
@@ -105,7 +113,7 @@ export default function Header({
 
                 <div className="flex items-center gap-4 lg:gap-6">
                   <a
-                    href={ctaHref}
+                    title={ctaLabel}
                     data-open-contact-modal="true"
                     className="inline-flex items-center justify-center bg-sky-700 px-6 py-3 font-headline text-xs font-bold tracking-widest text-white uppercase transition-transform duration-300 hover:scale-95 cursor-pointer">
                     {ctaLabel}

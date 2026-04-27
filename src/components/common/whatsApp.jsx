@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const DEFAULT_MESSAGE =
-  "Hola, me gustaria recibir informacion sobre sus servicios.";
+  "Hola, me gustaría recibir información sobre sus servicios.";
 
 function normalizePhone(phone = "") {
   return String(phone).replace(/\D/g, "");
@@ -64,6 +64,8 @@ export default function WhatsApp({
                 src="/images/icon-whats.svg"
                 alt=""
                 aria-hidden="true"
+                loading="lazy"
+                decoding="async"
                 className="h-8 w-8 brightness-200"
               />
               <div>
@@ -91,7 +93,7 @@ export default function WhatsApp({
 
           <div className="space-y-3 bg-[url('/images/heroBack.webp')] bg-cover bg-center px-4 py-4">
             <p className="max-w-[85%] rounded-xl rounded-bl-sm bg-white px-3 py-2 text-sm text-slate-700 shadow-sm">
-              Hola, soy parte del equipo de Rupture. En que te apoyamos hoy?
+              Hola, soy parte del equipo de Rupture. ¿En qué te apoyamos hoy?
             </p>
             <p className="max-w-[85%] rounded-xl rounded-bl-sm bg-white px-3 py-2 text-sm text-slate-700 shadow-sm">
               Puedes abrir WhatsApp y te atendemos de inmediato.
@@ -103,7 +105,8 @@ export default function WhatsApp({
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${label} (abre una nueva pestana)`}
+              title="Abrir conversación en WhatsApp"
+              aria-label={`${label} (abre una nueva pestaña)`}
               className="inline-flex w-full items-center justify-center rounded-xl bg-[#25D366] px-4 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:scale-[0.99] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#25D366]/40">
               Continuar en WhatsApp
             </a>

@@ -5,7 +5,7 @@ const DEFAULT_SERVICES = [
   "Arquitectura cloud",
   "Desarrollo de software",
   "Ciberseguridad",
-  "Consultoria tecnologica",
+  "Consultoría tecnológica",
   "Otro",
 ];
 
@@ -14,7 +14,7 @@ export default function FormContactModal({
   onClose,
   services = DEFAULT_SERVICES,
   title = "Hablemos de tu proyecto",
-  description = "Completa el formulario y nuestro equipo te contactara pronto.",
+  description = "Completa el formulario y nuestro equipo te contactará pronto.",
 }) {
   const [isRendered, setIsRendered] = useState(isOpen);
   const overlayRef = useRef(null);
@@ -172,7 +172,7 @@ export default function FormContactModal({
 
           <label className="flex flex-col gap-2 sm:col-span-1">
             <span className="font-label text-sm font-semibold text-slate-700">
-              Telefono
+              Teléfono
             </span>
             <input
               type="tel"
@@ -196,7 +196,7 @@ export default function FormContactModal({
 
           <label className="flex flex-col gap-2 sm:col-span-2">
             <span className="font-label text-sm font-semibold text-slate-700">
-              En que servicio esta interesado
+              ¿En qué servicio está interesado?
             </span>
             <select
               name="service"

@@ -1,57 +1,55 @@
-import { url } from "astro:schema";
-
 const homeContent = {
   nav: {
     brand: "Rupture Technologies",
     links: [
       { label: "Servicios", href: "#servicios" },
-      { label: "Metodologia", href: "#arquitectura" },
+      { label: "Metodología", href: "#arquitectura" },
       { label: "IA y Futuro", href: "#capacidades" },
-      { label: "Como lo hacemos", href: "#como-lo-hacemos" },
-      { label: "Casos de Exito", href: "#contacto" },
+      { label: "Cómo lo hacemos", href: "#como-lo-hacemos" },
+      { label: "Casos de Éxito", href: "#contacto" },
     ],
-    cta: { label: "Agendar Consultoria", href: "#contacto" },
+    cta: { label: "Agendar consultoría", href: "#contacto" },
   },
   hero: {
     badge: "Estrategia Digital 2024",
     highlight: "Tecnología",
     title: "que mueve empresas hacia adelante.",
     description:
-      "Soluciones de alto valor utilizando la tecnologia como catalizador para redefinir el futuro de su organizacion.",
+      "Soluciones de alto valor que utilizan la tecnología como catalizador para redefinir el futuro de su organización.",
     primaryCta: { label: "Agendar Consulta", href: "#contacto" },
     secondaryCta: { label: "Explorar Servicios", href: "#servicios" },
     video: {
       src: "/videos/hero-enterprise.mp4",
-      alt: "Visualizacion abstracta de red digital con nodos y geometria en tonos azules.",
+      alt: "Visualización abstracta de una red digital con nodos y geometría en tonos azules.",
     },
   },
   architecture: {
-    title: "La Arquitectura de su Exito",
+    title: "La arquitectura de su éxito",
     description:
-      "Unimos vision estrategica con ejecucion tecnica impecable para construir ecosistemas digitales resilientes.",
+      "Unimos visión estratégica con ejecución técnica impecable para construir ecosistemas digitales resilientes.",
     pillars: [
       {
         number: "01",
-        title: "Consultoria Estrategica",
+        title: "Consultoría estratégica",
         description:
-          "Analisis profundo del modelo de negocio para identificar palancas de crecimiento exponencial.",
+          "Análisis profundo del modelo de negocio para identificar palancas de crecimiento exponencial.",
       },
       {
         number: "02",
         title: "Soluciones a Medida",
         description:
-          "Desarrollo de ecosistemas digitales disenados especificamente para resolver retos operativos complejos.",
+          "Desarrollo de ecosistemas digitales diseñados específicamente para resolver retos operativos complejos.",
       },
       {
         number: "03",
         title: "Enfoque de Negocios",
         description:
-          "Nuestra tecnologia no es el fin, sino el medio para alcanzar resultados financieros medibles.",
+          "Nuestra tecnología no es el fin, sino el medio para alcanzar resultados financieros medibles.",
       },
     ],
   },
   about: {
-    title: "¿Quienes Somos?",
+    title: "¿Quiénes somos?",
     description:
       "Rupture Technologies es una empresa dedicada a la innovación digital, combinando estrategia y tecnología para impulsar el crecimiento de nuestros clientes.",
     subDescription:
@@ -64,7 +62,7 @@ const homeContent = {
         icon: "link",
         title: "Konektor",
         description:
-          "Implementamos tecnologías emergentes como Inteligencia Artificial, Realidad Virtual y Aumentada, etc.",
+          "Implementamos tecnologías emergentes como inteligencia artificial, realidad virtual y realidad aumentada.",
         urlImage: "/images/services/vr.webp",
       },
       {
@@ -76,47 +74,47 @@ const homeContent = {
       },
       {
         icon: "transform",
-        title: "Transformacion Digital",
+        title: "Transformación digital",
         description:
-          "Modernizamos su legado tecnologico con arquitecturas escalables y procesos optimizados.",
+          "Modernizamos su legado tecnológico con arquitecturas escalables y procesos optimizados.",
         urlImage: "/images/services/digital-transform.webp",
       },
       {
         icon: "hub",
-        title: "Integracion Tecnologica",
+        title: "Integración tecnológica",
         description:
-          "Conectamos sus sistemas dispersos en una infraestructura unica y coherente.",
+          "Conectamos sus sistemas dispersos en una infraestructura única y coherente.",
         urlImage: "/images/services/digital-integration.webp",
       },
       {
         icon: "settings_suggest",
-        title: "Automatizacion de Procesos",
+        title: "Automatización de procesos",
         description:
           "Eliminamos fricciones operativas mediante flujos de trabajo inteligentes y automatizados.",
         urlImage: "/images/services/process-automatizacion.webp",
       },
       {
         icon: "psychology",
-        title: "IA e Innovacion",
+        title: "IA e innovación",
         description:
-          "Implementacion de inteligencia artificial aplicada a la toma de decisiones criticas.",
+          "Implementación de inteligencia artificial aplicada a la toma de decisiones críticas.",
         urlImage: "/images/services/ia.webp",
       },
       {
         icon: "query_stats",
-        title: "Consultoria de Negocios",
+        title: "Consultoría de negocios",
         description:
-          "Acompanamiento ejecutivo para alinear la hoja de ruta tecnologica con los KPI financieros.",
+          "Acompañamiento ejecutivo para alinear la hoja de ruta tecnológica con los KPI financieros.",
         urlImage: "/images/services/business.webp",
       },
     ],
   },
   valueProposition: {
-    title: "Conectamos estrategia, tecnologia y ejecucion.",
+    title: "Conectamos estrategia, tecnología y ejecución.",
     description:
-      "Nuestra metodologia propietaria permite acortar la brecha entre la idea y el valor real de mercado, garantizando que cada inversion tecnologica tenga un retorno estrategico claro.",
+      "Nuestra metodología propietaria permite acortar la brecha entre la idea y el valor real de mercado, garantizando que cada inversión tecnológica tenga un retorno estratégico claro.",
     stats: [
-      { value: "94%", label: "Retencion de Clientes" },
+      { value: "94%", label: "Retención de clientes" },
       { value: "120+", label: "Proyectos Ejecutados" },
     ],
     image: {
@@ -125,14 +123,14 @@ const homeContent = {
     },
   },
   howWeDoIt: {
-    kicker: "Metodo Rupture",
-    title: "¿Como lo hacemos?",
+    kicker: "Método Rupture",
+    title: "¿Cómo lo hacemos?",
     description:
-      "Proporcionamos soluciones de valor agregado utilizando la tecnologia como catalizador. Analizamos las necesidades de cada cliente, su mercado y sus objetivos para construir la mejor propuesta y llevar su operacion hacia una transformacion digital sostenible.",
+      "Proporcionamos soluciones de valor agregado utilizando la tecnología como catalizador. Analizamos las necesidades de cada cliente, su mercado y sus objetivos para construir la mejor propuesta y llevar su operación hacia una transformación digital sostenible.",
     steps: [
       {
         number: "01",
-        title: "Diagnostico Estrategico",
+        title: "Diagnóstico estratégico",
         description:
           "Evaluamos contexto, procesos y oportunidades para definir una hoja de ruta clara y medible.",
       },
@@ -140,13 +138,13 @@ const homeContent = {
         number: "02",
         title: "Propuesta de Alto Impacto",
         description:
-          "Disenamos una solucion personalizada que equilibra vision de negocio, tecnologia y ejecucion.",
+          "Diseñamos una solución personalizada que equilibra visión de negocio, tecnología y ejecución.",
       },
       {
         number: "03",
-        title: "Implementacion y Evolucion",
+        title: "Implementación y evolución",
         description:
-          "Ejecutamos con acompanamiento continuo para asegurar adopcion, resultados y mejora permanente.",
+          "Ejecutamos con acompañamiento continuo para asegurar adopción, resultados y mejora permanente.",
       },
     ],
   },
@@ -164,7 +162,7 @@ const homeContent = {
       },
       {
         src: "/images/aliados/buzone.png",
-        alt: "Logo de Buzon e",
+        alt: "Logo de Buzón E",
         href: "https://mibuzonreceptor.buzone.com.mx/cuentareceptora/portal/login.html#!/",
       },
       {
@@ -176,22 +174,22 @@ const homeContent = {
   },
   masters: {
     kicker: "Equipo Directivo",
-    title: "Liderazgo que ejecuta vision",
+    title: "Liderazgo que ejecuta visión",
     description:
-      "Dos perfiles complementarios dirigen cada iniciativa: estrategia de negocio y ejecucion tecnologica de alto impacto.",
+      "Dos perfiles complementarios dirigen cada iniciativa: estrategia de negocio y ejecución tecnológica de alto impacto.",
     items: [
       {
         name: "Mariana Rios",
         role: "Directora General",
-        bio: "Lidera la vision comercial y la relacion con clientes para convertir objetivos de negocio en hojas de ruta accionables.",
+        bio: "Lidera la visión comercial y la relación con clientes para convertir objetivos de negocio en hojas de ruta accionables.",
         focus: "Estrategia, crecimiento y alianzas.",
         urlImage: "/images/master-1.png",
       },
       {
         name: "Andres Velasco",
-        role: "Director de Tecnologia",
-        bio: "Orquesta la arquitectura tecnica y la implementacion de soluciones digitales con enfoque en escalabilidad y resultados.",
-        focus: "Arquitectura, automatizacion e innovacion aplicada.",
+        role: "Director de Tecnología",
+        bio: "Orquesta la arquitectura técnica y la implementación de soluciones digitales con enfoque en escalabilidad y resultados.",
+        focus: "Arquitectura, automatización e innovación aplicada.",
         urlImage: "/images/master-2.png",
       },
     ],
@@ -199,18 +197,18 @@ const homeContent = {
   footer: {
     brand: "Rupture Technologies",
     description:
-      "Arquitectura estrategica para la era digital. Transformamos organizaciones mediante la precision tecnica y la vision ejecutiva.",
+      "Arquitectura estratégica para la era digital. Transformamos organizaciones mediante la precisión técnica y la visión ejecutiva.",
     social: [
       { icon: "share", href: "#", label: "Compartir" },
       { icon: "alternate_email", href: "#", label: "Correo" },
     ],
     columns: [
       {
-        title: "Compania",
+        title: "Compañía",
         links: [
-          { label: "Como lo hacemos", href: "#como-lo-hacemos" },
+          { label: "Cómo lo hacemos", href: "#como-lo-hacemos" },
           { label: "Servicios", href: "#servicios" },
-          { label: "Metodologia", href: "#arquitectura" },
+          { label: "Metodología", href: "#arquitectura" },
           { label: "Casos", href: "#contacto" },
         ],
       },
@@ -219,13 +217,13 @@ const homeContent = {
         links: [
           { label: "IA Aplicada", href: "#capacidades" },
           { label: "Estructura IT", href: "#servicios" },
-          { label: "Como lo hacemos", href: "#como-lo-hacemos" },
+          { label: "Cómo lo hacemos", href: "#como-lo-hacemos" },
         ],
       },
     ],
     contact: {
       title: "Contacto Global",
-      address: "HQ: Av. de la Innovacion 450, Distrito Tecnologico.",
+      address: "HQ: Av. de la Innovación 450, Distrito Tecnológico.",
       email: "hello@rupture.tech",
       phone: "+34 900 123 456",
     },

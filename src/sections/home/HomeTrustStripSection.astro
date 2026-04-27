@@ -8,16 +8,22 @@ const { trust } = Astro.props;
   <LimitContainer>
     <h2
       class="font-headline text-4xl font-extrabold tracking-tighter text-center">
-      EMPRESAS QUE CONFIAN EN NOSOTROS
+      EMPRESAS QUE CONFÍAN EN NOSOTROS
     </h2>
     <div
       class="flex flex-wrap items-center justify-between gap-8 px-6 mt-30 max-xl:justify-center">
       {
-        trust.logos.map((logo) => (
-          <a href={logo.href} target="_blank" rel="noopener noreferrer">
+        trust.logos.map((logo: { src: string; alt: string; href: string }) => (
+          <a
+            href={logo.href}
+            title={logo.alt}
+            target="_blank"
+            rel="noopener noreferrer">
             <img
               src={logo.src}
               alt={logo.alt}
+              loading="lazy"
+              decoding="async"
               class="h-30 object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition duration-300"
             />
           </a>

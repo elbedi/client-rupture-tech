@@ -9,10 +9,11 @@ const { title, links = [] } = Astro.props;
   </h3>
   <ul class="space-y-4">
     {
-      links.map((item) => (
+      links.map((item: { label: string; href: string }) => (
         <li>
           <a
             href={item.href}
+            title={item.label}
             class="font-headline text-xs text-slate-400 uppercase transition-colors hover:text-sky-400">
             {item.label}
           </a>

@@ -49,6 +49,9 @@ const { hero } = Astro.props;
         autoplay
         muted
         loop
+        playsinline
+        preload="metadata"
+        aria-label={hero.video.alt}
         class="h-full w-full object-cover"
         style=" filter: brightness(100%)  grayscale(100%); opacity: 0.5;"
       ></video>
