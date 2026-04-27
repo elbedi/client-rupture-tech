@@ -9,7 +9,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "cf:pages:create": "npx wrangler pages project create",
+    "cf:pages:deploy": "npm run build && npx wrangler pages deploy dist",
+    "cf:pages:deploy:preview": "npm run build && npx wrangler pages deploy dist --branch=preview"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.3",
