@@ -1,4 +1,4 @@
-import homeContent from "@/content/home";
+import homeContent from "@/content/content";
 import LimitContainer from "@/components/common/LimitContainer.jsx";
 
 export default function Footer({
@@ -25,24 +25,31 @@ export default function Footer({
       <LimitContainer className="px-6 py-20 lg:px-8">
         <div className="mb-20 grid grid-cols-1 gap-16 md:grid-cols-12">
           <div className="md:col-span-4">
-            <p className="mb-8 font-headline text-lg font-bold tracking-widest text-white uppercase">
-              {footerData.brand}
-            </p>
-            <p className="mb-8 text-sm leading-relaxed font-light text-slate-400">
-              {footerData.description}
-            </p>
+            <div className="w-7/10 mx-auto">
+              <img
+                src="/images/logo.png"
+                alt="Logotipo Rupture Tech"
+                className="w-full brightness-400"
+              />
+            </div>
 
-            <div className="flex gap-4">
+            <div className="mt-15 flex justify-center gap-4">
               {footerData.social.map((item) => (
                 <a
                   key={`${item.label}-${item.href}`}
                   href={item.href}
                   title={item.label}
                   className="flex h-10 w-10 items-center justify-center bg-slate-800 transition-colors hover:bg-sky-600"
-                  aria-label={item.label}>
-                  <span className="material-symbols-outlined text-sm">
-                    {item.icon}
-                  </span>
+                  aria-label={item.label}
+                  target="_blank"
+                  rel="noreferrer noopener">
+                  <img
+                    src={`/images/icons/${item.icon}.svg`}
+                    alt=""
+                    aria-hidden="true"
+                    className="h-7 w-7"
+                    loading="lazy"
+                  />
                 </a>
               ))}
             </div>

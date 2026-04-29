@@ -14,7 +14,7 @@ const {
   description = siteConfig.description,
   keywords = siteConfig.keywords,
   noindex = false,
-  bodyClass = "bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-white/10",
+  bodyClass = "font-sans antialiased selection:bg-white/10 bg-surface font-body text-on-surface",
 } = Astro.props;
 
 const canonical = Astro.url?.toString() || siteConfig.url;

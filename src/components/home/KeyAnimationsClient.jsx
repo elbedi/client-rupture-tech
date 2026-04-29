@@ -74,7 +74,7 @@ export default function HomeKeyAnimationsClient() {
         gsap.set(elements, { autoAlpha: 0, y: group.y });
 
         ScrollTrigger.batch(elements, {
-          start: "top 86%",
+          start: "top 80%",
           once: true,
           onEnter: (batch) => {
             gsap.to(batch, {

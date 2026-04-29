@@ -1,7 +1,7 @@
 const site = {
   name: "Rupture Technologies",
-  email: "hello@rupture.tech",
-  phone: "+34 900 123 456",
+  email: "elizabeth@rupture-tech.com",
+  phone: "+52 990 309 7476",
   ctaText: "Agendar consultoría",
 };
 

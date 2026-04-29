@@ -4,14 +4,14 @@ import LimitContainer from "@/components/common/LimitContainer.jsx";
 const { trust } = Astro.props;
 ---
 
-<section class="bg-surface-container-high py-50" aria-label="Empresas aliadas">
+<section class="bg-surface-container-high py-20" aria-label="Nuestros aliados">
   <LimitContainer>
     <h2
       class="font-headline text-4xl font-extrabold tracking-tighter text-center">
-      EMPRESAS QUE CONFÍAN EN NOSOTROS
+      NUESTROS ALIADOS
     </h2>
     <div
-      class="flex flex-wrap items-center justify-between gap-8 px-6 mt-30 max-xl:justify-center">
+      class="flex flex-wrap items-center justify-between gap-8 px-6 mt-20 max-xl:justify-center">
       {
         trust.logos.map((logo: { src: string; alt: string; href: string }) => (
           <a

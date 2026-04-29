@@ -19,6 +19,11 @@
 	--on-surface-variant: #43474e;
 }
 
+html {
+	scrollbar-width: thin;
+	scrollbar-color: gray transparent;
+}
+
 .font-headline {
 	font-family: "Plus Jakarta Sans", sans-serif;
 }

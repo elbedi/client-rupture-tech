@@ -1,35 +1,27 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import homeContent from "@/content/home";
-import HomeHeroSection from "@/sections/home/HomeHeroSection.astro";
-import HomeArchitectureSection from "@/sections/home/HomeArchitectureSection.astro";
-import HomeAboutSection from "@/sections/home/HomeAboutSection.astro";
-import HomeMastersSection from "@/sections/home/HomeMastersSection.astro";
-import HomeCapabilitiesSection from "@/sections/home/HomeCapabilitiesSection.jsx";
-import HomeHighlightSection from "@/sections/home/HomeHighlightSection.astro";
-import HomePhilosophySection from "@/sections/home/HomePhilosophySection.astro";
-import HomeTrustStripSection from "@/sections/home/HomeTrustStripSection.astro";
-import HomeKeyAnimationsClient from "@/components/home/HomeKeyAnimationsClient.jsx";
+import Content from "@/content/content";
+import HeroSection from "@/sections/home/HeroSection.astro";
+import ArchitectureSection from "@/sections/home/ArchitectureSection.astro";
+import AboutSection from "@/sections/home/AboutSection.astro";
+import CapabilitiesSection from "@/sections/home/CapabilitiesSection.jsx";
+import HighlightSection from "@/sections/home/HighlightSection.astro";
+import PhilosophySection from "@/sections/home/PhilosophySection.astro";
+import KeyAnimationsClient from "@/components/home/KeyAnimationsClient.jsx";
 ---
 
 <Layout
   showHeader={false}
   showFooter={false}
-  bodyClass="bg-surface font-body text-on-surface"
   title="Rupture Technologies | Arquitectura Estratégica Digital"
   description="Soluciones de alto valor que utilizan la tecnología como catalizador para redefinir el futuro de su organización.">
   <main>
-    <HomeHeroSection hero={homeContent.hero} />
-    <HomeArchitectureSection architecture={homeContent.architecture} />
-    <HomeAboutSection about={homeContent.about} />
-    <HomeCapabilitiesSection
-      capabilities={homeContent.capabilities}
-      client:visible
-    />
-    <HomeHighlightSection valueProposition={homeContent.valueProposition} />
-    <HomePhilosophySection howWeDoIt={homeContent.howWeDoIt} />
-    <HomeTrustStripSection trust={homeContent.trust} />
-    <HomeMastersSection masters={homeContent.masters} />
-    <HomeKeyAnimationsClient client:load />
+    <HeroSection hero={Content.hero} />
+    <ArchitectureSection architecture={Content.architecture} />
+    <AboutSection about={Content.about} />
+    <CapabilitiesSection capabilities={Content.capabilities} client:visible />
+    <HighlightSection valueProposition={Content.valueProposition} />
+    <PhilosophySection howWeDoIt={Content.howWeDoIt} />
+    <KeyAnimationsClient client:load />
   </main>
 </Layout>

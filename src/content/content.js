@@ -196,11 +196,10 @@ const homeContent = {
   },
   footer: {
     brand: "Rupture Technologies",
-    description:
-      "Arquitectura estratégica para la era digital. Transformamos organizaciones mediante la precisión técnica y la visión ejecutiva.",
     social: [
-      { icon: "share", href: "#", label: "Compartir" },
-      { icon: "alternate_email", href: "#", label: "Correo" },
+      { icon: "in", href: "#", label: "LinkedIn" },
+      { icon: "ig", href: "#", label: "Instagram" },
+      { icon: "fb", href: "#", label: "Facebook" },
     ],
     columns: [
       {
@@ -224,14 +223,11 @@ const homeContent = {
     contact: {
       title: "Contacto Global",
       address: "HQ: Av. de la Innovación 450, Distrito Tecnológico.",
-      email: "hello@rupture.tech",
-      phone: "+34 900 123 456",
+      email: "elizabeth@rupture-tech.com",
+      phone: "+52 990 309 7476",
     },
     legalLinks: [
-      { label: "Aviso Legal", href: "#" },
       { label: "Privacidad", href: "#" },
-      { label: "Cookies", href: "#" },
-      { label: "LinkedIn", href: "#" },
       { label: "Contacto", href: "#contacto" },
     ],
   },
