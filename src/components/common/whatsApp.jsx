@@ -91,7 +91,7 @@ export default function WhatsApp({
             </button>
           </header>
 
-          <div className="space-y-3 bg-[url('/images/heroBack.webp')] bg-cover bg-center px-4 py-4">
+          <div className="space-y-3 bg-[url('/images/heroBack.png')] bg-cover bg-center px-4 py-4">
             <p className="max-w-[85%] rounded-xl rounded-bl-sm bg-white px-3 py-2 text-sm text-slate-700 shadow-sm">
               Hola, soy parte del equipo de Rupture. ¿En qué te apoyamos hoy?
             </p>

@@ -17,11 +17,14 @@ import KeyAnimationsClient from "@/components/home/KeyAnimationsClient.jsx";
   description="Soluciones de alto valor que utilizan la tecnología como catalizador para redefinir el futuro de su organización.">
   <main>
     <HeroSection hero={Content.hero} />
-    <ArchitectureSection architecture={Content.architecture} />
+    <ArchitectureSection
+      architecture={Content.architecture}
+      theProblem={Content.theProblem}
+    />
+    <PhilosophySection howWeDoIt={Content.howWeDoIt} />
     <AboutSection about={Content.about} />
     <CapabilitiesSection capabilities={Content.capabilities} client:visible />
     <HighlightSection valueProposition={Content.valueProposition} />
-    <PhilosophySection howWeDoIt={Content.howWeDoIt} />
     <KeyAnimationsClient client:load />
   </main>
 </Layout>

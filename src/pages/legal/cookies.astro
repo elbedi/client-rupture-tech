@@ -1,0 +1,13 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import legalContent from "@/content/legal";
+import LegalContentSection from "@/sections/legal/LegalContentSection.astro";
+
+const legal = legalContent.cookies;
+---
+
+<Layout title={legal.seoTitle} description={legal.seoDescription} brandHref="/">
+  <main>
+    <LegalContentSection legal={legal} />
+  </main>
+</Layout>

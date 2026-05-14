@@ -2,14 +2,14 @@ import LimitContainer from "@/components/common/LimitContainer.jsx";
 import { useEffect, useState } from "react";
 
 const defaultLinks = [
-  { label: "Nosotros", href: "#about" },
-  { label: "Servicios", href: "#servicios" },
+  { label: "Nosotros", href: "/about" },
+  { label: "Servicios", href: "/services" },
   { label: "Contacto", href: "#contacto" },
 ];
 
 export default function Header({
   brand = "ELBEDI",
-  brandHref = "#inicio",
+  brandHref = "/",
   links = defaultLinks,
   ctaLabel = "Agendar consultoría",
   ctaHref = "#contacto",

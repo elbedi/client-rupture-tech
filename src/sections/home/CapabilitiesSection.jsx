@@ -88,11 +88,12 @@ export default function HomeCapabilitiesSection({ capabilities }) {
           <div className="flex flex-col gap-20">
             {capabilities.items.map((item, index) => (
               <div
-                key={item.title}
+                key={item.slug || item.title}
                 ref={(el) => {
                   cardRefs.current[index] = el;
                 }}>
                 <ServiceCapabilityCard
+                  slug={item.slug}
                   icon={item.icon}
                   title={item.title}
                   description={item.description}

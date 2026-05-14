@@ -1,0 +1,33 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import site from "@/content/site";
+import { servicesCatalog, servicesNavigationLinks } from "@/content/services";
+import ServiceDetailTemplate from "@/sections/services/ServiceDetailTemplate.astro";
+
+export function getStaticPaths() {
+  return servicesCatalog.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+
+const normalizedPhone = String(site.phone || "").replace(/\D/g, "");
+const waMessage =
+  service?.whatsAppMessage ||
+  "Hola, quiero más información sobre este servicio.";
+const whatsAppHref = normalizedPhone
+  ? `https://wa.me/${normalizedPhone}?text=${encodeURIComponent(waMessage)}`
+  : "/#contacto";
+---
+
+<Layout
+  title={service.seoTitle}
+  description={service.seoDescription}
+  headerLinks={servicesNavigationLinks}
+  brandHref="/">
+  <main>
+    <ServiceDetailTemplate service={service} whatsAppHref={whatsAppHref} />
+  </main>
+</Layout>
