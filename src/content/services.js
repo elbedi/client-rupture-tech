@@ -285,7 +285,7 @@ const servicesCatalog = [
         "Mayor resiliencia operativa",
         "Equipos mejor preparados",
         "Monitoreo y respuesta más rápida",
-        "Confianza digital para clientes y aliados",
+        "Confianza digital para clientes y aliados ",
       ],
       finalCta: "Activa un plan de ciberseguridad para tu empresa",
     },
