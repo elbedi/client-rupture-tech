@@ -1,0 +1,17 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Content from "@/content/content";
+import AboutSection from "@/sections/about/AboutSection.astro";
+import TrustStripSection from "@/sections/about/TrustStripSection.astro";
+import MastersSection from "@/sections/about/MastersSection.astro";
+---
+
+<Layout
+  title="Rupture Technologies | Nosotros"
+  description="Conoce al equipo y aliados estratégicos de Rupture Technologies.">
+  <main>
+    <AboutSection />
+    <MastersSection masters={Content.masters} />
+    <TrustStripSection trust={Content.trust} />
+  </main>
+</Layout>

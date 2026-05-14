@@ -1,0 +1,278 @@
+---
+import LimitContainer from "@/components/common/LimitContainer.jsx";
+
+const { service, whatsAppHref } = Astro.props;
+const detail = service?.detail ?? {};
+const problemBullets: string[] = Array.isArray(detail.problemBullets)
+  ? detail.problemBullets
+  : [];
+const solutionBullets: string[] = Array.isArray(detail.solutionBullets)
+  ? detail.solutionBullets
+  : [];
+const benefits: string[] = Array.isArray(detail.benefits)
+  ? detail.benefits
+  : [];
+const hasProblemText =
+  typeof detail.problemText === "string" &&
+  detail.problemText.trim().length > 0;
+const benefitPreview = benefits.slice(0, 3);
+---
+
+<section
+  class="relative overflow-hidden bg-primary pt-32 pb-24 text-on-primary">
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+    <div
+      class="absolute -top-24 -left-20 h-72 w-72 rounded-full bg-secondary/30 blur-3xl">
+    </div>
+    <div
+      class="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-cyan-300/20 blur-3xl">
+    </div>
+  </div>
+
+  <LimitContainer className="relative z-10 px-6 lg:px-8">
+    <div class="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+      <div>
+        <p
+          class="mb-5 font-headline text-xs font-bold tracking-[0.3em] text-cyan-300 uppercase">
+          {detail.heading}
+        </p>
+        <h1
+          class="text-balance font-headline text-4xl leading-tight font-extrabold tracking-tight md:text-5xl">
+          {detail.heroTitle}
+        </h1>
+        <p
+          class="mt-6 max-w-2xl text-base leading-relaxed text-slate-300 md:text-lg">
+          {detail.heroSubtitle}
+        </p>
+
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+          <a
+            href={whatsAppHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center rounded-xl bg-cyan-500 px-7 py-4 font-headline text-xs font-bold tracking-[0.16em] text-slate-950 uppercase transition-transform duration-300 hover:scale-[0.98]">
+            {detail.heroCta}
+          </a>
+          <a
+            href="/services"
+            class="inline-flex items-center justify-center rounded-xl border border-white/30 px-7 py-4 font-headline text-xs font-bold tracking-[0.16em] text-white uppercase transition-colors duration-300 hover:bg-white/10">
+            Ver catálogo completo
+          </a>
+        </div>
+      </div>
+
+      <figure
+        class="relative isolate min-h-80 overflow-hidden rounded-3xl border border-white/20 bg-slate-900/45 shadow-2xl">
+        <img
+          src={service.cardImage}
+          alt={service.cardTitle}
+          class="h-full w-full object-cover grayscale"
+          loading="lazy"
+          decoding="async"
+        />
+        <div
+          class="absolute inset-0 bg-linear-to-br from-slate-950/20 via-slate-900/65 to-sky-900/35">
+        </div>
+        <div
+          class="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/20 bg-slate-950/55 p-5 backdrop-blur-sm">
+          <p class="font-headline text-xl font-bold tracking-tight text-white">
+            {service.cardTitle}
+          </p>
+          <p class="mt-2 text-sm leading-relaxed text-slate-200">
+            {service.cardDescription}
+          </p>
+        </div>
+      </figure>
+    </div>
+  </LimitContainer>
+</section>
+
+<section class="relative bg-white py-24">
+  <LimitContainer className="px-6 lg:px-8">
+    <div class="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+      <article
+        class="rounded-3xl border border-slate-200 bg-slate-50 p-8 md:p-10">
+        <p
+          class="mb-4 font-headline text-xs font-bold tracking-[0.25em] text-secondary uppercase">
+          El problema
+        </p>
+        <h2
+          class="text-balance font-headline text-3xl leading-tight font-extrabold tracking-tight text-slate-900 md:text-4xl">
+          {detail.problemTitle}
+        </h2>
+
+        {
+          hasProblemText && (
+            <p class="mt-5 max-w-2xl text-base leading-relaxed text-slate-600 md:text-lg">
+              {detail.problemText}
+            </p>
+          )
+        }
+
+        <ul class="mt-8 space-y-3">
+          {
+            problemBullets.map((bullet) => (
+              <li class="flex items-start gap-3 text-sm leading-relaxed text-slate-700 md:text-base">
+                <span class="material-symbols-outlined mt-0.5 text-secondary">
+                  error
+                </span>
+                <span>{bullet}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </article>
+
+      <aside class="rounded-3xl bg-primary p-8 text-on-primary md:p-10">
+        <p class="text-xs font-bold tracking-[0.22em] text-cyan-300 uppercase">
+          Riesgos recurrentes
+        </p>
+        <h3
+          class="mt-4 font-headline text-2xl leading-tight font-bold text-white">
+          Lo que suele pasar cuando no existe control estructural
+        </h3>
+        <div class="mt-8 space-y-4">
+          {
+            problemBullets.slice(0, 3).map((bullet) => (
+              <div class="rounded-2xl border border-white/15 bg-white/5 px-4 py-3">
+                <p class="text-sm leading-relaxed text-slate-200">{bullet}</p>
+              </div>
+            ))
+          }
+        </div>
+      </aside>
+    </div>
+  </LimitContainer>
+</section>
+
+<section class="relative overflow-hidden bg-slate-950 py-24 text-white">
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+    <div
+      class="absolute left-0 top-0 h-full w-full bg-[radial-gradient(circle_at_10%_10%,rgba(32,99,147,0.28),transparent_38%),radial-gradient(circle_at_80%_20%,rgba(56,189,248,0.18),transparent_35%)]">
+    </div>
+  </div>
+
+  <LimitContainer className="relative z-10 px-6 lg:px-8">
+    <div class="grid gap-10 lg:grid-cols-[1fr_1fr]">
+      <div>
+        <p
+          class="mb-4 font-headline text-xs font-bold tracking-[0.28em] text-cyan-300 uppercase">
+          La solución
+        </p>
+        <h2
+          class="text-balance font-headline text-3xl leading-tight font-extrabold tracking-tight md:text-4xl">
+          {detail.solutionTitle}
+        </h2>
+        <p
+          class="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 md:text-lg">
+          {detail.solutionText}
+        </p>
+
+        <div class="mt-10 grid gap-3 sm:grid-cols-3">
+          {
+            benefitPreview.map((item) => (
+              <article class="rounded-2xl border border-cyan-200/20 bg-cyan-200/5 px-4 py-4">
+                <p class="text-sm font-semibold text-cyan-100">{item}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+
+      <article
+        class="rounded-3xl border border-white/15 bg-white/5 p-8 backdrop-blur-xs md:p-10">
+        <p class="text-xs font-bold tracking-[0.22em] text-cyan-300 uppercase">
+          {detail.solutionLabel}
+        </p>
+        <ol class="mt-6 space-y-4">
+          {
+            solutionBullets.map((item, index) => (
+              <li class="flex gap-4 rounded-2xl border border-white/10 bg-slate-900/45 px-4 py-4">
+                <span class="mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-cyan-300/60 font-headline text-xs font-bold text-cyan-200">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span class="text-sm leading-relaxed text-slate-200 md:text-base">
+                  {item}
+                </span>
+              </li>
+            ))
+          }
+        </ol>
+      </article>
+    </div>
+  </LimitContainer>
+</section>
+
+<section class="bg-white py-24">
+  <LimitContainer className="px-6 lg:px-8">
+    <div
+      class="mb-12 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+      <div>
+        <p class="text-xs font-bold tracking-[0.28em] text-secondary uppercase">
+          Beneficios
+        </p>
+        <h2
+          class="mt-3 font-headline text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
+          Resultados visibles para la operación
+        </h2>
+      </div>
+      <p class="max-w-sm text-sm leading-relaxed text-slate-600 md:text-base">
+        Cada iniciativa se diseña para entregar impacto medible en
+        productividad, control y experiencia del negocio.
+      </p>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+      {
+        benefits.map((benefit) => (
+          <article class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/60">
+            <span class="material-symbols-outlined text-sky-700">verified</span>
+            <p class="mt-4 text-sm leading-relaxed font-semibold text-slate-800">
+              {benefit}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </LimitContainer>
+</section>
+
+<section class="relative overflow-hidden bg-primary py-20 text-on-primary">
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+    <div
+      class="absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-cyan-300/20 blur-3xl">
+    </div>
+    <div
+      class="absolute right-0 top-0 h-72 w-72 rounded-full bg-secondary/25 blur-3xl">
+    </div>
+  </div>
+
+  <LimitContainer className="relative z-10 px-6 lg:px-8">
+    <div class="rounded-3xl border border-white/20 bg-white/6 p-8 md:p-10">
+      <div
+        class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+        <div class="max-w-3xl">
+          <h2
+            class="mt-4 text-balance font-headline text-3xl leading-tight font-extrabold tracking-tight md:text-4xl">
+            {detail.finalCta}
+          </h2>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <a
+            href={whatsAppHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center rounded-xl bg-cyan-500 px-7 py-4 font-headline text-xs font-bold tracking-[0.16em] text-slate-950 uppercase transition-transform duration-300 hover:scale-[0.98]">
+            {detail.finalCta}
+          </a>
+          <a
+            href="/services"
+            class="inline-flex items-center justify-center rounded-xl border border-white/30 px-7 py-4 font-headline text-xs font-bold tracking-[0.16em] text-white uppercase transition-colors duration-300 hover:bg-white/10">
+            Ver todos los servicios
+          </a>
+        </div>
+      </div>
+    </div>
+  </LimitContainer>
+</section>

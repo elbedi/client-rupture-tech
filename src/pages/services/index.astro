@@ -1,0 +1,97 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import LimitContainer from "@/components/common/LimitContainer.jsx";
+import { servicesCatalog, servicesNavigationLinks } from "@/content/services";
+---
+
+<Layout
+  title="Servicios | Rupture Technologies"
+  description="Explora los servicios de Rupture Technologies para automatización, compliance, innovación, fiscalidad, integración y ciberseguridad."
+  headerLinks={servicesNavigationLinks}
+  brandHref="/">
+  <main class="bg-surface-container-low pt-28 pb-20">
+    <section class="relative overflow-hidden py-20">
+      <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+        <div
+          class="absolute -top-12 -left-20 h-72 w-72 rounded-full bg-secondary/18 blur-3xl">
+        </div>
+        <div
+          class="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-sky-300/20 blur-3xl">
+        </div>
+      </div>
+
+      <LimitContainer className="relative z-10 px-6 lg:px-8">
+        <div class="max-w-4xl">
+          <p
+            class="mb-4 font-headline text-xs font-bold tracking-[0.3em] text-secondary uppercase">
+            Portafolio de servicios
+          </p>
+          <h1
+            class="text-balance font-headline text-4xl leading-tight font-extrabold tracking-tight text-primary md:text-5xl">
+            Soluciones diseñadas para operar con más control, cumplimiento y
+            crecimiento
+          </h1>
+          <p
+            class="mt-6 max-w-3xl text-base leading-relaxed text-slate-600 md:text-lg">
+            Cada línea de servicio responde a un reto crítico del negocio:
+            eficiencia operativa, cumplimiento normativo, innovación aplicable,
+            control fiscal, integración tecnológica y seguridad digital.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
+          {
+            servicesCatalog.map((service) => (
+              <article class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_24px_45px_-30px_rgba(15,23,42,0.45)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_55px_-30px_rgba(8,47,73,0.65)]">
+                <div class="relative h-52 overflow-hidden bg-slate-900">
+                  <img
+                    src={service.cardImage}
+                    alt={service.cardTitle}
+                    loading="lazy"
+                    decoding="async"
+                    class="h-full w-full object-cover grayscale transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div class="absolute inset-0 bg-linear-to-tr from-slate-950/80 via-slate-900/45 to-sky-800/25" />
+                  <div class="absolute top-5 left-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 backdrop-blur-sm">
+                    <span class="material-symbols-outlined text-base text-cyan-200">
+                      {service.cardIcon}
+                    </span>
+                    <span class="text-[10px] font-bold tracking-[0.2em] text-white uppercase">
+                      Rupture
+                    </span>
+                  </div>
+                </div>
+
+                <div class="p-6">
+                  <h2 class="font-headline text-2xl leading-tight font-bold tracking-tight text-slate-900">
+                    {service.cardTitle}
+                  </h2>
+                  <p class="mt-4 text-sm leading-relaxed text-slate-600 md:text-base">
+                    {service.cardDescription}
+                  </p>
+
+                  <ul class="mt-5 space-y-2">
+                    {service.detail.solutionBullets.slice(0, 3).map((item) => (
+                      <li class="flex items-start gap-2 text-sm leading-relaxed text-slate-600">
+                        <span class="material-symbols-outlined mt-0.5 text-base text-secondary">
+                          check_circle
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <a
+                    href={`/services/${service.slug}`}
+                    class="mt-6 inline-flex items-center justify-center rounded-xl border border-slate-300 px-5 py-3 font-headline text-xs font-bold tracking-[0.16em] text-slate-900 uppercase transition-all duration-300 hover:border-sky-400 hover:bg-sky-50 hover:text-sky-900">
+                    Más información
+                  </a>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </LimitContainer>
+    </section>
+  </main>
+</Layout>

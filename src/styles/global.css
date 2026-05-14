@@ -19,6 +19,11 @@
 	--on-surface-variant: #43474e;
 }
 
+html {
+	scrollbar-width: thin;
+	scrollbar-color: gray transparent;
+}
+
 .font-headline {
 	font-family: "Plus Jakarta Sans", sans-serif;
 }
@@ -166,4 +171,29 @@
 	filter: brightness(100%);
 	opacity: 1;
 	transform: scale(1.1);
+}
+
+@keyframes float{
+  0% {
+    transform: translateX(14px) translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateX(0px) translateY(-14px) rotate(3deg);
+  }
+  50% {
+    transform: translateX(-14px) translateY(0px) rotate(0deg);
+  }
+  75% {
+    transform: translateX(0px) translateY(14px) rotate(-3deg);
+  }
+  100% {
+    transform: translateX(14px) translateY(0px) rotate(0deg);
+  } 
+}
+
+.target-float {
+  animation-name: float;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }

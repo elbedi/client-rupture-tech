@@ -1,9 +1,12 @@
 export default function ServiceCapabilityCard({
+  slug,
   icon,
   title,
   description,
   urlImage,
 }) {
+  const detailHref = slug ? `/services/${slug}` : "/services";
+
   return (
     <article className="group flex items-center bg-white transition-colors duration-300 hover:bg-primary rounded-2xl shadow-2xl overflow-hidden h-80">
       <div className="w-full p-10 relative z-1">
@@ -19,12 +22,10 @@ export default function ServiceCapabilityCard({
           {description}
         </p>
         <a
-          href="https://wa.me/5215512345678?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
-          target="_blank"
-          rel="noopener noreferrer"
+          href={detailHref}
           aria-label={`Más información sobre ${title}`}
           className="mt-6 inline-flex items-center justify-center border border-outline-variant px-8 py-3 font-headline text-sm font-bold uppercase tracking-widest text-primary transition-all duration-300 hover:bg-surface-container-high group-hover:text-white">
-          Mas información
+          Más información
         </a>
       </div>
       <div
