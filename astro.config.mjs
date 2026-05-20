@@ -3,13 +3,14 @@ import { defineConfig } from "astro/config";
 import { fileURLToPath } from "node:url";
 
 import tailwindcss from "@tailwindcss/vite";
-
+import cloudflare from "@astrojs/cloudflare";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://rupture.tech",
+  output: "server",
 
   redirects: {
     "/home": "/",
@@ -30,4 +31,5 @@ export default defineConfig({
       filter: (page) => !page.includes("/legal/"),
     }),
   ],
+  adapter: cloudflare(),
 });
