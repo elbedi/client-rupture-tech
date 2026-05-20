@@ -13,7 +13,7 @@ export default function Footer({
     brand: brand || footer.brand,
     contact: {
       ...footer.contact,
-      email: email || footer.contact.email,
+      email: "contacto@rupture-tech.com",
       phone: phone || footer.contact.phone,
     },
   };

@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import site from "@/content/site";
+import siteConfig from "@/config/siteConfig.js";
 import { servicesCatalog, servicesNavigationLinks } from "@/content/services";
 import ServiceDetailTemplate from "@/sections/services/ServiceDetailTemplate.astro";
 
@@ -20,13 +21,53 @@ const waMessage =
 const whatsAppHref = normalizedPhone
   ? `https://wa.me/${normalizedPhone}?text=${encodeURIComponent(waMessage)}`
   : "/#contacto";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: service.cardTitle,
+  description: service.seoDescription,
+  url: `${siteConfig.url}/services/${service.slug}`,
+  provider: {
+    "@type": "Organization",
+    name: siteConfig.siteName,
+    url: siteConfig.url,
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "México",
+  },
+  inLanguage: siteConfig.lang,
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: siteConfig.url },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Servicios",
+      item: `${siteConfig.url}/services`,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: service.cardTitle,
+      item: `${siteConfig.url}/services/${service.slug}`,
+    },
+  ],
+};
 ---
 
 <Layout
   title={service.seoTitle}
   description={service.seoDescription}
+  ogType="article"
   headerLinks={servicesNavigationLinks}
-  brandHref="/">
+  brandHref="/"
+  extraSchema={[serviceSchema, breadcrumbSchema]}>
   <main>
     <ServiceDetailTemplate service={service} whatsAppHref={whatsAppHref} />
   </main>

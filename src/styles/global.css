@@ -174,26 +174,25 @@ html {
 }
 
 @keyframes float{
-  0% {
-    transform: translateX(14px) translateY(0px) rotate(0deg);
-  }
-  25% {
-    transform: translateX(0px) translateY(-14px) rotate(3deg);
-  }
-  50% {
-    transform: translateX(-14px) translateY(0px) rotate(0deg);
-  }
-  75% {
-    transform: translateX(0px) translateY(14px) rotate(-3deg);
-  }
-  100% {
-    transform: translateX(14px) translateY(0px) rotate(0deg);
-  } 
+	0% {
+		transform: translateX(-10vw);
+		opacity: 0;
+	}
+	10%{
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(60vw);
+		opacity: 0;
+	}
 }
 
 .target-float {
-  animation-name: float;
-  animation-duration: 20s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+	animation-name: float;
+	animation-duration: 14s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
 }

@@ -16,15 +16,9 @@ const variants = {
   primary: "relative bg-primary text-on-primary hover:translate-x-1",
   ghost:
     "border border-outline-variant text-primary hover:bg-surface-container-high",
-  dark: "bg-primary-container px-6 py-3 text-xs text-on-primary-container hover:scale-95",
 };
 
-const variantClass =
-  variant === "ghost"
-    ? variants.ghost
-    : variant === "dark"
-      ? variants.dark
-      : variants.primary;
+const variantClass = variant === "ghost" ? variants.ghost : variants.primary;
 ---
 
 {

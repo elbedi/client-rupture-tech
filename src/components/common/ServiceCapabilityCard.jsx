@@ -18,7 +18,7 @@ export default function ServiceCapabilityCard({
         <h3 className="mb-4 font-headline text-xl font-bold text-primary group-hover:text-white">
           {title}
         </h3>
-        <p className="text-sm leading-relaxed text-on-surface-variant group-hover:text-slate-300">
+        <p className="text-sm leading-relaxed hidden md:block text-on-surface-variant group-hover:text-slate-300">
           {description}
         </p>
         <a

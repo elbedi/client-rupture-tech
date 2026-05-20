@@ -17,8 +17,8 @@ const homeContent = {
     title1: "tus procesos. ",
     highlight2: "Reduce ",
     title2: "errores. ",
-    highlight3: "Toma  ",
-    title3: "mejores decisiones. ",
+    title3: "Toma ",
+    highlight3: "mejores decisiones. ",
     description:
       "Automatizamos procesos críticos con tecnología para reducir costos, errores y riesgos de negocio.",
     primaryCta: { label: "Agendar Consulta", href: "#contacto" },
@@ -184,27 +184,28 @@ const homeContent = {
     ],
     columns: [
       {
-        title: "Compañía",
+        title: "Navegación",
         links: [
-          { label: "Cómo lo hacemos", href: "#como-lo-hacemos" },
-          { label: "Servicios", href: "#servicios" },
-          { label: "Metodología", href: "#arquitectura" },
-          { label: "Casos", href: "#contacto" },
+          { label: "Inicio", href: "/#inicio" },
+          { label: "Metodología", href: "/#arquitectura" },
+          { label: "Cómo lo hacemos", href: "/#como-lo-hacemos" },
+          { label: "Contacto", href: "/#contacto" },
         ],
       },
       {
-        title: "Estrategia",
+        title: "Empresa",
         links: [
-          { label: "IA Aplicada", href: "#capacidades" },
-          { label: "Estructura IT", href: "#servicios" },
-          { label: "Cómo lo hacemos", href: "#como-lo-hacemos" },
+          { label: "Nosotros", href: "/about" },
+          { label: "Servicios", href: "/services" },
+          { label: "IA y Futuro", href: "/#capacidades" },
+          { label: "Agendar consulta", href: "/#contacto" },
         ],
       },
     ],
     contact: {
       title: "Contacto Global",
       address: "HQ: Av. de la Innovación 450, Distrito Tecnológico.",
-      email: "elizabeth@rupture-tech.com",
+      email: "contacto@rupture-tech.com",
       phone: "+52 990 309 7476",
     },
     legalLinks: [

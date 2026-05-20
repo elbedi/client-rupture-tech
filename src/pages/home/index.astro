@@ -7,14 +7,28 @@ import AboutSection from "@/sections/home/AboutSection.astro";
 import CapabilitiesSection from "@/sections/home/CapabilitiesSection.jsx";
 import HighlightSection from "@/sections/home/HighlightSection.astro";
 import PhilosophySection from "@/sections/home/PhilosophySection.astro";
+import ContactSection from "@/sections/home/ContactSection.astro";
 import KeyAnimationsClient from "@/components/home/KeyAnimationsClient.jsx";
+
+const homeKeywords = [
+  "consultoría tecnológica México",
+  "transformación digital empresas",
+  "arquitectura digital estratégica",
+  "automatización de procesos de negocio",
+  "inteligencia artificial aplicada",
+  "integración de sistemas ERP",
+  "ciberseguridad empresarial",
+  "compliance normativo LATAM",
+];
 ---
 
 <Layout
   showHeader={false}
   showFooter={false}
   title="Rupture Technologies | Arquitectura Estratégica Digital"
-  description="Soluciones de alto valor que utilizan la tecnología como catalizador para redefinir el futuro de su organización.">
+  description="Rupture Technologies automatiza procesos, garantiza cumplimiento normativo e integra tecnología para impulsar el crecimiento de empresas en México y LATAM."
+  keywords={homeKeywords}
+  ogType="website">
   <main>
     <HeroSection hero={Content.hero} />
     <ArchitectureSection
@@ -25,6 +39,12 @@ import KeyAnimationsClient from "@/components/home/KeyAnimationsClient.jsx";
     <AboutSection about={Content.about} />
     <CapabilitiesSection capabilities={Content.capabilities} client:visible />
     <HighlightSection valueProposition={Content.valueProposition} />
+    <ContactSection
+      contact={Content.footer.contact}
+      services={Content.capabilities.items
+        .map((item) => item.title)
+        .filter(Boolean)}
+    />
     <KeyAnimationsClient client:load />
   </main>
 </Layout>

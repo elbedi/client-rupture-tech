@@ -6,7 +6,7 @@ const legalContent = {
     pageTitle: "Aviso de Privacidad",
     updatedAt: "13 de mayo de 2026",
     intro:
-      "Rupture Technologies S.A.P.I. de C.V., con operaciones en México y correo de contacto elizabeth@rupture-tech.com, es responsable del tratamiento, uso y protección de los datos personales recopilados a través de este sitio web y de los servicios relacionados.",
+      "Rupture Technologies S.A.P.I. de C.V., con operaciones en México y correo de contacto contacto@rupture-tech.com, es responsable del tratamiento, uso y protección de los datos personales recopilados a través de este sitio web y de los servicios relacionados.",
     introSecondary:
       "El presente Aviso de Privacidad tiene como finalidad informar a usuarios, clientes y visitantes sobre la recopilación, uso, almacenamiento y protección de la información proporcionada a través del sitio web, formularios, herramientas digitales y servicios tecnológicos ofrecidos por Rupture Technologies.",
     sections: [
@@ -92,7 +92,7 @@ const legalContent = {
         title: "6. Derechos del Titular",
         paragraphs: [
           "Los usuarios podrán solicitar acceso, rectificación o eliminación de sus datos personales mediante solicitud enviada a:",
-          "elizabeth@rupture-tech.com",
+          "contacto@rupture-tech.com",
           "Rupture Technologies podrá solicitar información adicional para validar identidad y proteger la seguridad de la información.",
         ],
         bullets: [],

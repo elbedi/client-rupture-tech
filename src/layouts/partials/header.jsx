@@ -65,13 +65,13 @@ export default function Header({
   return (
     <div className="fixed top-2 z-50 w-full">
       <LimitContainer>
-        <header className="border-0 bg-slate-50/90 backdrop-blur-sm dark:bg-slate-950/80 py-3 px-6 rounded-2xl shadow-xl">
+        <header className="border-0 backdrop-blur-sm bg-slate-950/80 py-3 px-6 rounded-2xl shadow-xl">
           <nav>
             <div className="flex items-center justify-between">
               <a
                 href={brandHref}
                 title={`Ir al inicio de ${brand}`}
-                className="flex gap-6 items-center text-slate-900 uppercase dark:text-slate-50">
+                className="flex gap-6 items-center text-slate-900 uppercase">
                 <img
                   src="/images/isotipo.png"
                   alt="Rupture Technologies Isotipo"
@@ -102,8 +102,8 @@ export default function Header({
                         className={[
                           "font-headline text-sm font-bold tracking-tighter uppercase transition-colors duration-200",
                           activeHref === item.href
-                            ? "border-b-2 border-sky-600 pb-1 text-sky-600 dark:border-sky-400 dark:text-sky-400"
-                            : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100",
+                            ? "border-b-2 border-sky-600 pb-1 text-sky-600"
+                            : "text-slate-300 hover:text-slate-100",
                         ].join(" ")}>
                         {item.label}
                       </a>

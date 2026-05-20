@@ -4,11 +4,41 @@ import Content from "@/content/content";
 import AboutSection from "@/sections/about/AboutSection.astro";
 import TrustStripSection from "@/sections/about/TrustStripSection.astro";
 import MastersSection from "@/sections/about/MastersSection.astro";
+
+const aboutKeywords = [
+  "equipo Rupture Technologies",
+  "consultores tecnológicos México",
+  "aliados estratégicos tecnología",
+  "expertos transformación digital",
+  "consultora tecnológica LATAM",
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: "https://rupture.tech",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Nosotros",
+      item: "https://rupture.tech/about",
+    },
+  ],
+};
 ---
 
 <Layout
-  title="Rupture Technologies | Nosotros"
-  description="Conoce al equipo y aliados estratégicos de Rupture Technologies.">
+  title="Nosotros | Rupture Technologies"
+  description="Conoce al equipo y aliados estratégicos de Rupture Technologies: consultores especializados en transformación digital, compliance, automatización y tecnología para empresas en México."
+  keywords={aboutKeywords}
+  ogType="website"
+  extraSchema={[breadcrumbSchema]}>
   <main>
     <AboutSection />
     <MastersSection masters={Content.masters} />

@@ -6,7 +6,11 @@ import LegalContentSection from "@/sections/legal/LegalContentSection.astro";
 const legal = legalContent.terms;
 ---
 
-<Layout title={legal.seoTitle} description={legal.seoDescription} brandHref="/">
+<Layout
+  title={legal.seoTitle}
+  description={legal.seoDescription}
+  brandHref="/"
+  noindex={true}>
   <main>
     <LegalContentSection legal={legal} />
   </main>

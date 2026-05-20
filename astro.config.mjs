@@ -26,6 +26,10 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [react(), sitemap()],
-  adapter: cloudflare(),
+  integrations: [
+    react(),
+    sitemap({
+      filter: (page) => !page.includes("/legal/"),
+    }),
+  ],
 });

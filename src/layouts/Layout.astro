@@ -13,13 +13,18 @@ const {
   title = siteConfig.title,
   description = siteConfig.description,
   keywords = siteConfig.keywords,
+  ogImage,
+  ogImageAlt,
+  ogType = "website",
   noindex = false,
   bodyClass = "font-sans antialiased selection:bg-white/10 bg-surface font-body text-on-surface",
   headerLinks,
   brandHref = "#inicio",
+  extraSchema = [],
 } = Astro.props;
 
 const canonical = Astro.url?.toString() || siteConfig.url;
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -27,7 +32,15 @@ const organizationSchema = {
   url: siteConfig.url,
   email: site.email,
   telephone: site.phone,
-  logo: `${siteConfig.url}/images/text-logo.png`,
+  logo: {
+    "@type": "ImageObject",
+    url: `${siteConfig.url}/images/text-logo.png`,
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "MX",
+  },
+  sameAs: ["https://www.linkedin.com/company/rupture-technologies"],
 };
 
 const websiteSchema = {
@@ -37,6 +50,23 @@ const websiteSchema = {
   url: siteConfig.url,
   inLanguage: siteConfig.lang,
 };
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  description: description,
+  url: canonical,
+  inLanguage: siteConfig.lang,
+  isPartOf: { "@type": "WebSite", url: siteConfig.url },
+};
+
+const allSchema = [
+  organizationSchema,
+  websiteSchema,
+  webPageSchema,
+  ...extraSchema,
+];
 ---
 
 <!doctype html>
@@ -46,8 +76,11 @@ const websiteSchema = {
     description={description}
     canonical={canonical}
     keywords={keywords}
+    ogImage={ogImage}
+    ogImageAlt={ogImageAlt}
+    ogType={ogType}
     noindex={noindex}
-    schema={[organizationSchema, websiteSchema]}
+    schema={allSchema}
   />
   <body class={bodyClass}>
     <Header

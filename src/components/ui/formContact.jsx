@@ -189,7 +189,7 @@ export default function FormContactModal({
             <input
               type="email"
               name="email"
-              placeholder="tu@correo.com"
+              placeholder="contacto@rupture-tech.com"
               className="h-11 rounded-xl border border-slate-300 px-3 font-body text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-slate-500"
             />
           </label>
@@ -211,6 +211,26 @@ export default function FormContactModal({
                 </option>
               ))}
             </select>
+          </label>
+
+          <label className="sm:col-span-2 flex items-start gap-3 text-xs text-slate-600">
+            <input
+              type="checkbox"
+              name="legalConsent"
+              required
+              className="mt-0.5 h-4 w-4 rounded border border-slate-300 accent-slate-900"
+            />
+            <span>
+              Acepto el{" "}
+              <a href="/legal/privacy" className="underline">
+                Aviso de Privacidad
+              </a>{" "}
+              y los{" "}
+              <a href="/legal/terms" className="underline">
+                Términos y Condiciones
+              </a>
+              .
+            </span>
           </label>
 
           <div className="sm:col-span-2">

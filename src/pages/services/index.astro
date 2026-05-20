@@ -2,13 +2,45 @@
 import Layout from "@/layouts/Layout.astro";
 import LimitContainer from "@/components/common/LimitContainer.jsx";
 import { servicesCatalog, servicesNavigationLinks } from "@/content/services";
+
+const servicesKeywords = [
+  "servicios consultoría tecnológica México",
+  "automatización de procesos empresariales",
+  "compliance normativo empresas",
+  "tecnologías disruptivas IA",
+  "tax consulting fiscal México",
+  "integración ERP tecnológica",
+  "ciberseguridad soporte digital",
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: "https://rupture.tech",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Servicios",
+      item: "https://rupture.tech/services",
+    },
+  ],
+};
 ---
 
 <Layout
   title="Servicios | Rupture Technologies"
-  description="Explora los servicios de Rupture Technologies para automatización, compliance, innovación, fiscalidad, integración y ciberseguridad."
+  description="Explora los servicios de Rupture Technologies: automatización de procesos, compliance normativo, tecnologías disruptivas, tax consulting, integración tecnológica y ciberseguridad para empresas en México."
+  keywords={servicesKeywords}
+  ogType="website"
   headerLinks={servicesNavigationLinks}
-  brandHref="/">
+  brandHref="/"
+  extraSchema={[breadcrumbSchema]}>
   <main class="bg-surface-container-low pt-28 pb-20">
     <section class="relative overflow-hidden py-20">
       <div aria-hidden="true" class="pointer-events-none absolute inset-0">
