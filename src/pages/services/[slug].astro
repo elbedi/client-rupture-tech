@@ -2,17 +2,15 @@
 import Layout from "@/layouts/Layout.astro";
 import site from "@/content/site";
 import siteConfig from "@/config/siteConfig.js";
-import { servicesCatalog, servicesNavigationLinks } from "@/content/services";
+import { servicesBySlug, servicesNavigationLinks } from "@/content/services";
 import ServiceDetailTemplate from "@/sections/services/ServiceDetailTemplate.astro";
 
-export function getStaticPaths() {
-  return servicesCatalog.map((service) => ({
-    params: { slug: service.slug },
-    props: { service },
-  }));
-}
+const slug = Astro.params.slug ?? "";
+const service = slug ? servicesBySlug[slug] : undefined;
 
-const { service } = Astro.props;
+if (!service) {
+  return Astro.redirect("/services");
+}
 
 const normalizedPhone = String(site.phone || "").replace(/\D/g, "");
 const waMessage =

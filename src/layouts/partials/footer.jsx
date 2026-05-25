@@ -1,6 +1,10 @@
 import homeContent from "@/content/content";
 import LimitContainer from "@/components/common/LimitContainer.jsx";
 
+function normalizePhone(phone = "") {
+  return String(phone).replace(/\D/g, "");
+}
+
 export default function Footer({
   brand,
   email,
@@ -8,6 +12,10 @@ export default function Footer({
   footer = homeContent.footer,
 }) {
   const currentYear = new Date().getFullYear();
+  const normalizedPhone = normalizePhone(phone || footer.contact.phone);
+  const whatsAppHref = normalizedPhone
+    ? `https://wa.me/${normalizedPhone}?text=${encodeURIComponent("Hola, me gustaría recibir información sobre sus servicios.")}`
+    : null;
   const footerData = {
     ...footer,
     brand: brand || footer.brand,
@@ -88,6 +96,15 @@ export default function Footer({
             <p className="font-headline text-sm font-bold text-white">
               {footerData.contact.phone}
             </p>
+            {whatsAppHref && (
+              <a
+                href={whatsAppHref}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="mt-3 inline-flex items-center font-headline text-xs font-bold tracking-[0.14em] text-sky-400 uppercase transition-colors hover:text-sky-300">
+                ChatBot IA (WhatsApp)
+              </a>
+            )}
           </div>
         </div>
 

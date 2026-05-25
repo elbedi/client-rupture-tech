@@ -1,5 +1,33 @@
 ---
 import LimitContainer from "@/components/common/LimitContainer";
+
+const valuePillars = [
+  {
+    label: "Visión",
+    title: "Negocio antes que herramienta",
+    description:
+      "Cada decisión técnica responde primero a objetivos operativos, financieros y de crecimiento.",
+  },
+  {
+    label: "Diseño",
+    title: "Soluciones hechas para operar",
+    description:
+      "Construimos flujos, automatizaciones e integraciones que funcionan dentro de la realidad del cliente.",
+  },
+  {
+    label: "Acompañamiento",
+    title: "Transformación con adopción real",
+    description:
+      "No entregamos piezas aisladas: acompañamos la implementación hasta que el cambio genere valor.",
+  },
+];
+
+const focusAreas = [
+  "Automatización de procesos",
+  "Cumplimiento y control operativo",
+  "Integración de sistemas",
+  "IA aplicada al negocio",
+];
 ---
 
 <section
@@ -7,91 +35,207 @@ import LimitContainer from "@/components/common/LimitContainer";
   class="relative overflow-hidden bg-white py-24 md:py-30">
   <LimitContainer className="relative px-6 lg:px-8">
     <div
-      class="pointer-events-none absolute -top-14 right-6 h-32 w-32 bg-secondary/10"
-      style="clip-path: polygon(20% 0, 100% 0, 80% 100%, 0 100%);">
+      class="pointer-events-none absolute -top-20 right-0 h-52 w-52 bg-secondary/10 blur-2xl"
+      aria-hidden="true">
+    </div>
+    <div
+      class="pointer-events-none absolute bottom-10 left-0 h-56 w-56 rounded-full bg-slate-200/40 blur-3xl"
+      aria-hidden="true">
     </div>
 
-    <div class="relative grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-10">
-      <div class="lg:col-span-4">
-        <p
-          class="mb-4 text-xs font-bold tracking-[0.28em] text-secondary uppercase">
-          Nosotros
-        </p>
-        <h1
-          class="font-headline text-4xl leading-tight font-extrabold tracking-tight text-primary sm:text-5xl">
-          Nuestra Trayectoria
-        </h1>
-        <div class="mt-7 h-1 w-24 bg-secondary"></div>
-        <div class="w-full">
-          <img
-            src="/images/logo.png"
-            alt="Logo de Rupture Tech"
-            class="mt-30 w-8/10 max-w-xs object-contain"
-          />
-        </div>
-      </div>
-
-      <div class="lg:col-span-8">
-        <div class="rounded-3xl border border-slate-200 bg-surface p-7 sm:p-10">
+    <div class="relative">
+      <div class="flex gap-6 items-start">
+        <div>
           <p
-            class="font-headline text-xl leading-relaxed font-semibold text-primary sm:text-2xl">
-            En Rupture, entendemos la tecnologia como un motor de transformacion
-            empresarial.
+            class="mb-4 inline-flex items-center gap-3 rounded-full border border-secondary/40 bg-secondary/10 px-4 py-2 text-[11px] font-bold tracking-[0.28em] text-secondary uppercase">
+            <span class="h-2 w-2 rounded-full bg-secondary"></span>
+            Nosotros
+          </p>
+          <h1
+            class="font-headline text-4xl leading-[0.92] font-extrabold tracking-tight text-primary sm:text-5xl xl:text-6xl">
+            Estrategia boutique para operaciones que no pueden fallar.
+          </h1>
+          <p
+            class="mt-6 max-w-lg text-lg leading-relaxed text-on-surface-variant sm:text-xl">
+            En Rupture Technologies combinamos pensamiento estratégico, diseño
+            operacional y ejecución técnica para convertir la complejidad en
+            crecimiento controlado.
           </p>
 
-          <div
-            class="mt-7 space-y-5 text-base leading-relaxed text-on-surface-variant sm:text-lg">
-            <p>
-              Nuestra trayectoria comienza con una premisa clara: las empresas
-              no necesitan mas herramientas, necesitan soluciones que realmente
-              funcionen dentro de su operacion. Por eso, desde nuestros inicios,
-              hemos trabajado bajo un enfoque centrado en el negocio, analizando
-              procesos, detectando fricciones y disenando estrategias
-              tecnologicas alineadas a resultados.
-            </p>
-            <p>
-              Con el tiempo, hemos consolidado una practica que integra
-              automatizacion, cumplimiento normativo, inteligencia artificial e
-              integracion tecnologica, permitiendo a nuestros clientes optimizar
-              recursos, reducir errores y escalar sus operaciones con mayor
-              control.
-            </p>
-            <p>
-              Hoy, acompanamos a empresas que buscan evolucionar, adaptarse y
-              crecer en entornos cada vez mas exigentes, actuando como un socio
-              estrategico en su proceso de transformacion digital.
-            </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            {
+              focusAreas.map((item) => (
+                <span class="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700">
+                  {item}
+                </span>
+              ))
+            }
           </div>
         </div>
 
-        <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+        <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <article class="rounded-3xl border border-slate-200 bg-slate-50 p-5">
             <p
               class="text-xs font-bold tracking-[0.18em] text-sky-700 uppercase">
               Enfoque
             </p>
-            <p class="mt-2 text-sm font-medium text-slate-700">
-              Negocio primero, tecnologia como habilitador.
+            <p class="mt-3 text-base leading-relaxed text-slate-700">
+              Negocio primero. Tecnología como habilitador de ventaja
+              competitiva.
             </p>
           </article>
-          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <article
+            class="rounded-3xl border border-slate-200 bg-primary p-5 text-white">
             <p
-              class="text-xs font-bold tracking-[0.18em] text-sky-700 uppercase">
-              Especialidad
-            </p>
-            <p class="mt-2 text-sm font-medium text-slate-700">
-              Automatizacion, IA, cumplimiento e integracion.
-            </p>
-          </article>
-          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <p
-              class="text-xs font-bold tracking-[0.18em] text-sky-700 uppercase">
+              class="text-xs font-bold tracking-[0.18em] text-sky-200 uppercase">
               Rol
             </p>
-            <p class="mt-2 text-sm font-medium text-slate-700">
-              Socio estrategico para la transformacion digital.
+            <p class="mt-3 text-base leading-relaxed text-slate-100">
+              Socio estratégico para diseñar, implementar y escalar
+              transformación digital con criterio de negocio.
             </p>
           </article>
+        </div>
+      </div>
+
+      <div class="relative mt-10">
+        <div
+          class="absolute inset-x-10 top-8 -z-10 hidden h-[78%] rounded-4xl bg-linear-to-br from-sky-100 via-white to-slate-100 xl:block">
+        </div>
+
+        <div
+          class="overflow-hidden rounded-4xl border border-slate-200 bg-surface shadow-[0_24px_80px_rgba(15,23,42,0.08)]">
+          <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr]">
+            <div class="relative overflow-hidden bg-primary p-8 sm:p-10">
+              <div
+                class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(32,99,147,0.35),transparent_40%)]">
+              </div>
+              <div
+                class="absolute -right-10 bottom-0 h-36 w-36 bg-secondary/20 blur-2xl">
+              </div>
+
+              <div class="relative z-10 max-w-xl">
+                <p
+                  class="text-xs font-bold tracking-[0.22em] text-sky-200 uppercase">
+                  Nuestra perspectiva
+                </p>
+                <p
+                  class="mt-5 font-headline text-2xl leading-tight font-bold text-white sm:text-3xl">
+                  Las empresas no necesitan más tecnología. Necesitan sistemas
+                  que ordenen la operación, reduzcan la fricción y permitan
+                  crecer con claridad.
+                </p>
+
+                <div
+                  class="mt-8 space-y-5 text-base leading-relaxed text-slate-300 sm:text-lg">
+                  <p>
+                    Partimos de una idea simple: una solución solo tiene valor
+                    cuando mejora la forma en que una empresa decide, ejecuta y
+                    controla su operación.
+                  </p>
+                  <p>
+                    Por eso trabajamos desde el negocio hacia la tecnología,
+                    entendiendo procesos, puntos de fricción y objetivos reales
+                    antes de diseñar cualquier arquitectura, automatización o
+                    integración.
+                  </p>
+                  <p>
+                    El resultado es una práctica boutique con mirada ejecutiva y
+                    criterio técnico, enfocada en construir estructuras más
+                    resilientes, medibles y escalables.
+                  </p>
+                </div>
+
+                <div
+                  class="mt-8 flex items-center gap-4 border-t border-white/10 pt-6">
+                  <img
+                    src="/images/text-logo.png"
+                    alt="Rupture Technologies"
+                    class="h-7 w-auto opacity-90 brightness-200 grayscale"
+                  />
+                  <span
+                    class="text-sm font-medium tracking-wide text-slate-300">
+                    Estrategia, tecnología y ejecución alineadas.
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="relative border-t border-slate-200 bg-white lg:border-t-0 lg:border-l">
+              <div class="relative h-full min-h-90 overflow-hidden">
+                <img
+                  src="/images/team-about.png"
+                  alt="Equipo Rupture Technologies"
+                  loading="lazy"
+                  decoding="async"
+                  class="h-full w-full object-cover"
+                />
+                <div
+                  class="absolute inset-0 bg-linear-to-t from-primary/80 via-primary/15 to-transparent">
+                </div>
+
+                <div
+                  class="absolute right-5 bottom-5 left-5 grid grid-cols-2 gap-3">
+                  <article
+                    class="rounded-2xl border border-white/15 bg-slate-900/40 p-4 backdrop-blur-md">
+                    <p
+                      class="text-[11px] font-bold tracking-[0.2em] text-sky-100 uppercase">
+                      Modelo
+                    </p>
+                    <p class="mt-2 text-sm leading-relaxed text-white">
+                      Consultoría boutique con ejecución integral.
+                    </p>
+                  </article>
+                  <article
+                    class="rounded-2xl border border-white/15 bg-slate-900/40 p-4 backdrop-blur-md">
+                    <p
+                      class="text-[11px] font-bold tracking-[0.2em] text-sky-100 uppercase">
+                      Impacto
+                    </p>
+                    <p class="mt-2 text-sm leading-relaxed text-white">
+                      Menos fricción, más control y mayor capacidad de escalar.
+                    </p>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
+          {
+            valuePillars.map((pillar) => (
+              <article class="group rounded-3xl border border-slate-200 bg-white p-6 transition-transform duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-lg">
+                <p class="text-xs font-bold tracking-[0.18em] text-sky-700 uppercase">
+                  {pillar.label}
+                </p>
+                <h2 class="mt-4 font-headline text-xl leading-tight font-bold text-primary">
+                  {pillar.title}
+                </h2>
+                <p class="mt-3 text-base leading-relaxed text-slate-600">
+                  {pillar.description}
+                </p>
+              </article>
+            ))
+          }
+        </div>
+
+        <div
+          class="mt-8 rounded-4xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+          <div
+            class="grid grid-cols-1 gap-6 lg:grid-cols-[0.7fr_1.3fr] lg:items-center">
+            <p
+              class="font-headline text-2xl leading-tight font-bold text-primary sm:text-3xl">
+              Diseñamos transformación digital con criterio directivo y nivel de
+              detalle operativo.
+            </p>
+            <p class="text-base leading-relaxed text-slate-600 sm:text-lg">
+              Eso significa tomar decisiones que sí pueden sostenerse en la
+              operación diaria: menos complejidad innecesaria, más adopción,
+              mayor claridad y una base real para escalar.
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -55,15 +55,15 @@ const homeContent = {
     ],
   },
   architecture: {
-    title: "La arquitectura de tu éxito",
+    title: "Estrategia de crecmimiento controlado",
     description:
-      "Unimos visión estratégica con ejecución técnica impecable para construir ecosistemas digitales resilientes.",
+      "Unimos visión estratégica con ejecución técnica para construir ecosistemas digitales resilientes.",
     pillars: [
       {
         number: "01",
         title: "Consultoría estratégica",
         description:
-          "Análisis profundo del modelo de negocio para identificar palancas de crecimiento exponencial.",
+          "Análisis profundo del modelo y procesos de negocio para identificar oportunidades y generar propuesta de solución que generen crecimiento",
       },
       {
         number: "02",
@@ -75,7 +75,7 @@ const homeContent = {
         number: "03",
         title: "Enfoque de Negocios",
         description:
-          "Nuestra tecnología no es el fin, sino el medio para alcanzar resultados financieros medibles.",
+          "Nuestra metodología se centra en crear valor real y medible para cada cliente.",
       },
     ],
   },

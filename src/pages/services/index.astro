@@ -8,9 +8,9 @@ const servicesKeywords = [
   "automatización de procesos empresariales",
   "compliance normativo empresas",
   "tecnologías disruptivas IA",
+  "consultoría IA para empresas",
   "tax consulting fiscal México",
   "integración ERP tecnológica",
-  "ciberseguridad soporte digital",
 ];
 
 const breadcrumbSchema = {
@@ -35,7 +35,7 @@ const breadcrumbSchema = {
 
 <Layout
   title="Servicios | Rupture Technologies"
-  description="Explora los servicios de Rupture Technologies: automatización de procesos, compliance normativo, tecnologías disruptivas, tax consulting, integración tecnológica y ciberseguridad para empresas en México."
+  description="Explora los servicios de Rupture Technologies: automatización de procesos, compliance normativo, tecnologías disruptivas, consultoría IA, tax consulting e integración tecnológica para empresas en México."
   keywords={servicesKeywords}
   ogType="website"
   headerLinks={servicesNavigationLinks}
@@ -67,11 +67,27 @@ const breadcrumbSchema = {
             class="mt-6 max-w-3xl text-base leading-relaxed text-slate-600 md:text-lg">
             Cada línea de servicio responde a un reto crítico del negocio:
             eficiencia operativa, cumplimiento normativo, innovación aplicable,
-            control fiscal, integración tecnológica y seguridad digital.
+            control fiscal, integración tecnológica y adopción estratégica de
+            IA.
           </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a
+              href="/services/consultoria-ia"
+              class="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 font-headline text-xs font-bold tracking-[0.16em] text-white uppercase transition-all duration-300 hover:bg-sky-900">
+              Ver página de Consultoría IA
+            </a>
+            <a
+              href="#catalogo-servicios"
+              class="inline-flex items-center justify-center rounded-xl border border-slate-300 px-6 py-3 font-headline text-xs font-bold tracking-[0.16em] text-slate-900 uppercase transition-all duration-300 hover:border-sky-400 hover:bg-sky-50 hover:text-sky-900">
+              Explorar catálogo
+            </a>
+          </div>
         </div>
 
-        <div class="mt-12 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
+        <div
+          id="catalogo-servicios"
+          class="mt-12 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
           {
             servicesCatalog.map((service) => (
               <article class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_24px_45px_-30px_rgba(15,23,42,0.45)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_55px_-30px_rgba(8,47,73,0.65)]">

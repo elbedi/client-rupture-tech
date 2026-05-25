@@ -40,6 +40,12 @@ export default function Head({
       <meta name="keywords" content={keywordsContent} />
       <link rel="canonical" href={normalizedCanonical} />
       <meta name="robots" content={robots} />
+      <link
+        rel="preload"
+        as="image"
+        href="/images/logo.png"
+        fetchPriority="high"
+      />
 
       {/* Open Graph */}
       <meta property="og:site_name" content={siteConfig.siteName} />

@@ -10,12 +10,11 @@ const {
 } = Astro.props;
 
 const baseClass =
-  "inline-flex items-center justify-center px-8 py-5 font-headline text-sm font-bold uppercase tracking-widest transition-all duration-300 cursor-pointer";
+  "inline-flex items-center justify-center text-center px-8 py-5 font-headline text-sm font-bold uppercase tracking-widest transition-all duration-300 cursor-pointer";
 
 const variants = {
   primary: "relative bg-primary text-on-primary hover:translate-x-1",
-  ghost:
-    "border border-outline-variant text-primary hover:bg-surface-container-high",
+  ghost: "border border-slate-500 text-primary hover:bg-surface-container-high",
 };
 
 const variantClass = variant === "ghost" ? variants.ghost : variants.primary;

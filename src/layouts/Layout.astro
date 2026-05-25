@@ -19,7 +19,7 @@ const {
   noindex = false,
   bodyClass = "font-sans antialiased selection:bg-white/10 bg-surface font-body text-on-surface",
   headerLinks,
-  brandHref = "#inicio",
+  brandHref = "/",
   extraSchema = [],
 } = Astro.props;
 
@@ -83,6 +83,54 @@ const allSchema = [
     schema={allSchema}
   />
   <body class={bodyClass}>
+    <div id="site-preloader" aria-hidden="true">
+      <img
+        src="/images/logo.png"
+        alt=""
+        decoding="async"
+        style="width: 90%; max-width: 300px;"
+      />
+    </div>
+    <script is:inline>
+      (() => {
+        const body = document.body;
+        const preloader = document.getElementById("site-preloader");
+        const reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        );
+        const minimumVisibleTime = 1500;
+        const startTime = performance.now();
+
+        if (!preloader || !body) {
+          return;
+        }
+
+        body.classList.add("preloader-is-active");
+
+        const closePreloader = () => {
+          const elapsed = performance.now() - startTime;
+          const remaining = Math.max(0, minimumVisibleTime - elapsed);
+
+          window.setTimeout(() => {
+            preloader.classList.add("is-hidden");
+            body.classList.remove("preloader-is-active");
+
+            window.setTimeout(
+              () => {
+                preloader.remove();
+              },
+              reduceMotion.matches ? 0 : 420,
+            );
+          }, remaining);
+        };
+
+        if (document.readyState === "complete") {
+          closePreloader();
+        } else {
+          window.addEventListener("load", closePreloader, { once: true });
+        }
+      })();
+    </script>
     <Header
       brand={site.name}
       brandHref={brandHref}

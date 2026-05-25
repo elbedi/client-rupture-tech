@@ -24,6 +24,76 @@ html {
 	scrollbar-color: gray transparent;
 }
 
+body.preloader-is-active {
+	overflow: hidden;
+}
+
+#site-preloader {
+	position: fixed;
+	inset: 0;
+	z-index: 120;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background:
+		radial-gradient(circle at top, rgb(32 99 147 / 0.12), transparent 34%),
+		linear-gradient(180deg, #ffffff 0%, #f6f9fc 100%);
+	opacity: 1;
+	visibility: visible;
+	transition:
+		opacity 0.42s ease,
+		visibility 0.42s ease;
+}
+
+#site-preloader::before,
+#site-preloader::after {
+	content: "";
+	position: absolute;
+	border-radius: 9999px;
+	filter: blur(48px);
+	opacity: 0.8;
+	pointer-events: none;
+}
+
+#site-preloader::before {
+	width: min(32vw, 360px);
+	height: min(32vw, 360px);
+	top: 12%;
+	right: 10%;
+	background: rgb(32 99 147 / 0.26);
+}
+
+#site-preloader::after {
+	width: min(28vw, 300px);
+	height: min(28vw, 300px);
+	bottom: 12%;
+	left: 10%;
+	background: rgb(56 189 248 / 0.18);
+}
+
+#site-preloader img {
+	position: relative;
+	z-index: 1;
+	height: 300px;
+	width: auto;
+	max-width: min(84vw, 560px);
+	object-fit: contain;
+	filter: none;
+	opacity: 1;
+	animation: preloaderOpacityPulse 1.5s ease-in-out infinite;
+}
+
+#site-preloader.is-hidden {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+#site-preloader.is-hidden img {
+	opacity: 0;
+	transition: opacity 0.42s ease;
+}
+
 .font-headline {
 	font-family: "Plus Jakarta Sans", sans-serif;
 }
@@ -163,6 +233,27 @@ html {
 	}
 }
 
+@keyframes whatsChatEnter {
+	0% {
+		opacity: 0;
+		transform: translateY(20px) scale(0.96);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+@keyframes preloaderOpacityPulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.45;
+	}
+}
+
 .image-content-service:hover{
 	clip-path:polygon(20% 0, 100% 0, 100% 100%, 0% 100%) !important;
 }
@@ -195,4 +286,19 @@ html {
 	animation-duration: 14s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
+}
+
+@media (max-width: 640px) {
+	#site-preloader img {
+		height: min(300px, 52vw);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#site-preloader,
+	#site-preloader img,
+	#site-preloader.is-hidden img {
+		animation: none;
+		transition: none;
+	}
 }

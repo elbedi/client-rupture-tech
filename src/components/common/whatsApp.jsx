@@ -57,7 +57,7 @@ export default function WhatsApp({
       {isOpen && (
         <section
           aria-label="Ventana de chat de WhatsApp"
-          className="pointer-events-auto w-[min(22rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-[#d6efe0] bg-[#f0f2f5] shadow-[0_24px_50px_-26px_rgba(0,0,0,0.55)]">
+          className="pointer-events-auto w-[min(22rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-[#d6efe0] bg-[#f0f2f5] shadow-[0_24px_50px_-26px_rgba(0,0,0,0.55)] origin-bottom-right motion-safe:animate-[whatsChatEnter_320ms_cubic-bezier(0.22,1,0.36,1)_both]">
           <header className="flex items-center justify-between bg-[#075e54] px-4 py-3 text-white">
             <div className="flex items-center gap-2">
               <img

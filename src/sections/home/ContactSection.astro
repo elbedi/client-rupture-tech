@@ -1,17 +1,12 @@
 ---
 import LimitContainer from "@/components/common/LimitContainer.jsx";
+import { serviceSelectOptions } from "@/content/services";
 
 const { contact = {}, services = [] } = Astro.props;
 
 const serviceOptions: string[] = services.length
   ? services
-  : [
-      "Arquitectura cloud",
-      "Desarrollo de software",
-      "Ciberseguridad",
-      "Consultoría tecnológica",
-      "Otro",
-    ];
+  : serviceSelectOptions;
 ---
 
 <section

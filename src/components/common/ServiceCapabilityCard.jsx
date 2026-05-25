@@ -8,25 +8,25 @@ export default function ServiceCapabilityCard({
   const detailHref = slug ? `/services/${slug}` : "/services";
 
   return (
-    <article className="group flex items-center bg-white transition-colors duration-300 hover:bg-primary rounded-2xl shadow-2xl overflow-hidden h-80">
+    <article className="flex items-center bg-white transition-colors duration-300 hover:bg-primary rounded-2xl shadow-2xl overflow-hidden relative h-80">
       <div className="w-full p-10 relative z-1">
-        <div className="mb-8 flex h-12 w-12 items-center justify-center bg-surface-container-high transition-colors group-hover:bg-secondary">
-          <span className="material-symbols-outlined text-primary group-hover:text-white">
-            {icon}
-          </span>
+        <div className="mb-8 flex h-12 w-12 items-center justify-center bg-surface-container-high transition-colors">
+          <span className="material-symbols-outlined text-primary">{icon}</span>
         </div>
-        <h3 className="mb-4 font-headline text-xl font-bold text-primary group-hover:text-white">
+        <h3 className="mb-4 font-headline text-center text-xl font-bold text-primary">
           {title}
         </h3>
-        <p className="text-sm leading-relaxed hidden md:block text-on-surface-variant group-hover:text-slate-300">
+        <p className="text-sm text-center leading-relaxed hidden md:block text-on-surface-variant ">
           {description}
         </p>
-        <a
-          href={detailHref}
-          aria-label={`Más información sobre ${title}`}
-          className="mt-6 inline-flex items-center justify-center border border-outline-variant px-8 py-3 font-headline text-sm font-bold uppercase tracking-widest text-primary transition-all duration-300 hover:bg-surface-container-high group-hover:text-white">
-          Más información
-        </a>
+        <div className="flex justify-center">
+          <a
+            href={detailHref}
+            aria-label={`Más información sobre ${title}`}
+            className="mt-6 inline-flex items-center justify-center text-center border border-outline-variant px-8 py-3 font-headline text-sm font-bold uppercase tracking-widest text-primary transition-all duration-300 hover:bg-slate-200 rounded-xl">
+            Más información
+          </a>
+        </div>
       </div>
       <div
         className="image-content-service w-full h-full bg-slate-700 duration-100 ease-in max-md:absolute z-0 max-md:opacity-20"

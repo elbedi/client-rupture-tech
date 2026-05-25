@@ -15,6 +15,9 @@ export default function Header({
   ctaHref = "#contacto",
 }) {
   const [activeHref, setActiveHref] = useState("");
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const [isHeaderPinnedTop, setIsHeaderPinnedTop] = useState(true);
+  const [enableScrollHide, setEnableScrollHide] = useState(false);
 
   useEffect(() => {
     const sectionIds = links
@@ -62,8 +65,94 @@ export default function Header({
     return () => observer.disconnect();
   }, [links]);
 
+  useEffect(() => {
+    const mobileMedia = window.matchMedia("(max-width: 1023px)");
+    let removeScrollListener = () => {};
+
+    const bindMobileScroll = () => {
+      let lastScrollY = window.scrollY;
+      let ticking = false;
+      const minDelta = 10;
+      const topSafeZone = 48;
+
+      const updateHeader = () => {
+        const currentY = window.scrollY;
+        const delta = currentY - lastScrollY;
+
+        if (currentY <= topSafeZone) {
+          setIsHeaderVisible(true);
+          setIsHeaderPinnedTop(true);
+          lastScrollY = currentY;
+          ticking = false;
+          return;
+        }
+
+        setIsHeaderPinnedTop(false);
+
+        if (Math.abs(delta) >= minDelta) {
+          setIsHeaderVisible(delta < 0);
+          lastScrollY = currentY;
+        }
+
+        ticking = false;
+      };
+
+      const onScroll = () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateHeader);
+          ticking = true;
+        }
+      };
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      return () => {
+        window.removeEventListener("scroll", onScroll);
+      };
+    };
+
+    const syncScrollMode = () => {
+      removeScrollListener();
+      setIsHeaderVisible(true);
+      setIsHeaderPinnedTop(true);
+
+      if (mobileMedia.matches) {
+        setEnableScrollHide(true);
+        removeScrollListener = bindMobileScroll();
+        return;
+      }
+
+      setEnableScrollHide(false);
+      removeScrollListener = () => {};
+    };
+
+    syncScrollMode();
+
+    if (mobileMedia.addEventListener) {
+      mobileMedia.addEventListener("change", syncScrollMode);
+    } else {
+      mobileMedia.addListener(syncScrollMode);
+    }
+
+    return () => {
+      removeScrollListener();
+
+      if (mobileMedia.removeEventListener) {
+        mobileMedia.removeEventListener("change", syncScrollMode);
+      } else {
+        mobileMedia.removeListener(syncScrollMode);
+      }
+    };
+  }, []);
+
   return (
-    <div className="fixed top-2 z-50 w-full">
+    <div
+      className={[
+        "fixed top-2 z-50 w-full transform-gpu transition-transform duration-300 ease-out will-change-transform",
+        enableScrollHide && !(isHeaderVisible || isHeaderPinnedTop)
+          ? "translate-y-[-140%]"
+          : "translate-y-0",
+      ].join(" ")}>
       <LimitContainer>
         <header className="border-0 backdrop-blur-sm bg-slate-950/80 py-3 px-6 rounded-2xl shadow-xl">
           <nav>

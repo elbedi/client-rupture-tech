@@ -4,8 +4,8 @@ const servicesCatalog = [
     cardIcon: "settings_suggest",
     cardTitle: "Consultoría y Automatización de Procesos",
     cardDescription:
-      "Mapeamos, automatizamos y controlamos procesos críticos para reducir errores y acelerar resultados operativos.",
-    cardImage: "/images/services/process-automatizacion.webp",
+      "Entendemos, mapeamos, se proponen mejoras y se automatizan procesos críticos para reducir errores y acelerar resultados operativos.",
+    cardImage: "/images/services/digital-transform.webp",
     seoTitle: "Consultoría y Automatización de Procesos | Rupture Technologies",
     seoDescription:
       "Automatización de procesos de negocio, mapeo AS-IS/TO-BE y control operativo con KPIs para escalar la operación con menor error.",
@@ -103,7 +103,7 @@ const servicesCatalog = [
     cardTitle: "Tecnologías Disruptivas",
     cardDescription:
       "Aplicamos IA, experiencias inmersivas y automatización avanzada para crear ventajas competitivas sostenibles.",
-    cardImage: "/images/services/ia.webp",
+    cardImage: "/images/services/vr.webp",
     seoTitle: "Tecnologías Disruptivas | Rupture Technologies",
     seoDescription:
       "IA aplicada, chatbots inteligentes, VR/AR y automatización de marketing para acelerar innovación con impacto de negocio.",
@@ -152,7 +152,7 @@ const servicesCatalog = [
     cardTitle: "Tax Consulting (Consultoría Financiera-Fiscal)",
     cardDescription:
       "Consultoría financiera-fiscal para conciliar CFDI vs ERP, controlar facturación y fortalecer auditorías SAT.",
-    cardImage: "/images/services/marketing.webp",
+    cardImage: "/images/services/process-automatizacion.webp",
     seoTitle: "Tax Consulting | Rupture Technologies",
     seoDescription:
       "Consultoría fiscal y contable con compulsas CFDI vs ERP, auditoría de facturación y acompañamiento para cumplimiento SAT.",
@@ -243,51 +243,52 @@ const servicesCatalog = [
     },
   },
   {
-    slug: "ciberseguridad-soporte-digital",
-    cardIcon: "shield",
-    cardTitle: "Ciberseguridad y Soporte Digital",
+    slug: "consultoria-ia",
+    cardIcon: "psychology",
+    cardTitle: "Consultoría IA",
     cardDescription:
-      "Protegemos infraestructura, usuarios y canales digitales con prevención activa, monitoreo y capacitación continua.",
-    cardImage: "/images/services/digital-transform.webp",
-    seoTitle: "Ciberseguridad y Soporte Digital | Rupture Technologies",
+      "Definimos casos de uso, priorizamos iniciativas y llevamos la inteligencia artificial hacia resultados reales de negocio.",
+    cardImage: "/images/services/ia.webp",
+    seoTitle: "Consultoría IA | Rupture Technologies",
     seoDescription:
-      "Pentesting, protección de endpoints y redes, diagnóstico de postura digital y capacitación en ciberseguridad.",
+      "Consultoría de inteligencia artificial para identificar oportunidades, diseñar casos de uso y ejecutar adopción con impacto real en el negocio.",
     whatsAppMessage:
-      "Hola, quiero evaluar la ciberseguridad y soporte digital de mi empresa.",
+      "Hola, quiero conocer una propuesta de Consultoría IA para mi empresa.",
     detail: {
-      heading: "CIBERSEGURIDAD Y SOPORTE DIGITAL",
-      heroTitle: "Protege tu operación digital antes de que aparezca la crisis",
+      heading: "CONSULTORÍA IA",
+      heroTitle: "Convierte la IA en una ventaja operativa y comercial",
       heroSubtitle:
-        "Fortalecemos tu postura de seguridad con pruebas técnicas, protección de infraestructura y capacitación continua para tu equipo.",
-      heroCta: "Evalúa tu postura de ciberseguridad",
-      problemTitle: "La exposición digital crece más rápido que los controles",
+        "Analizamos tu negocio, detectamos oportunidades de alto impacto y diseñamos una hoja de ruta de inteligencia artificial alineada a resultados.",
+      heroCta: "Solicita un diagnóstico de IA",
+      problemTitle: "La IA sin estrategia genera pilotos que no escalan",
       problemText:
-        "Sin una estrategia integral de seguridad, las brechas técnicas y humanas aumentan el riesgo operativo y reputacional.",
+        "Muchas empresas exploran herramientas de inteligencia artificial sin criterios claros de prioridad, adopción ni retorno, lo que diluye el valor de la inversión.",
       problemBullets: [
-        "Vulnerabilidades no detectadas en sistemas críticos",
-        "Endpoints y redes sin monitoreo integral",
-        "Baja cultura de seguridad en colaboradores",
-        "Presencia digital con brechas de protección",
-        "Respuesta reactiva ante incidentes",
+        "Casos de uso poco conectados al negocio",
+        "Procesos sin datos listos para automatizar",
+        "Equipos con dudas sobre adopción y operación",
+        "Riesgos por falta de gobierno de información",
+        "Iniciativas aisladas sin métricas claras",
       ],
-      solutionTitle: "Aplicamos seguridad activa con soporte continuo",
+      solutionTitle: "Diseñamos una estrategia de IA aplicable a tu operación",
       solutionText:
-        "Combinamos evaluación técnica, protección preventiva y formación del equipo para construir una postura de seguridad sostenible.",
+        "Aterrizamos la inteligencia artificial en iniciativas viables, medibles y sostenibles para que la tecnología genere impacto desde el negocio y no desde la moda.",
       solutionLabel: "Incluye",
       solutionBullets: [
-        "Pentesting (pruebas de penetración y análisis de vulnerabilidades)",
-        "Antivirus y protección de redes (endpoints, firewalls, monitoreo)",
-        "Diagnóstico de presencia digital y postura de seguridad",
-        "Capacitación en ciberseguridad vía e-learning",
+        "Diagnóstico de madurez y oportunidades de IA",
+        "Identificación y priorización de casos de uso",
+        "Diseño de roadmap de implementación",
+        "Definición de datos, procesos y capacidades requeridas",
+        "Acompañamiento en adopción y gobierno de IA",
       ],
       benefits: [
-        "Reducción de superficie de ataque",
-        "Mayor resiliencia operativa",
-        "Equipos mejor preparados",
-        "Monitoreo y respuesta más rápida",
-        "Confianza digital para clientes y aliados ",
+        "Priorización de iniciativas de alto impacto",
+        "Menor riesgo en la adopción de IA",
+        "Mejor aprovechamiento de datos y procesos",
+        "Implementaciones con enfoque de negocio",
+        "Base sólida para escalar automatización inteligente",
       ],
-      finalCta: "Activa un plan de ciberseguridad para tu empresa",
+      finalCta: "Define una estrategia de IA con impacto real",
     },
   },
 ];
@@ -299,6 +300,8 @@ const serviceCards = servicesCatalog.map((service) => ({
   description: service.cardDescription,
   urlImage: service.cardImage,
 }));
+
+const serviceSelectOptions = serviceCards.map((service) => service.title);
 
 const servicesBySlug = Object.fromEntries(
   servicesCatalog.map((service) => [service.slug, service]),
@@ -313,6 +316,7 @@ const servicesNavigationLinks = [
 export {
   servicesCatalog,
   serviceCards,
+  serviceSelectOptions,
   servicesBySlug,
   servicesNavigationLinks,
 };

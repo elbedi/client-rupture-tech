@@ -1,13 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import { serviceSelectOptions } from "@/content/services";
 
-const DEFAULT_SERVICES = [
-  "Arquitectura cloud",
-  "Desarrollo de software",
-  "Ciberseguridad",
-  "Consultoría tecnológica",
-  "Otro",
-];
+const DEFAULT_SERVICES = serviceSelectOptions;
 
 export default function FormContactModal({
   isOpen = false,
