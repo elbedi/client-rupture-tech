@@ -14,11 +14,11 @@ const homeContent = {
   },
   hero: {
     highlight1: "Automatiza ",
-    title1: "tus procesos. ",
-    highlight2: "Reduce ",
-    title2: "errores. ",
+    title1: "tus Procesos. ",
+    highlight2: " ",
+    title2: "Reduce errores. ",
     title3: "Toma ",
-    highlight3: "mejores decisiones. ",
+    highlight3: "Mejores Decisiones. ",
     description:
       "Automatizamos procesos críticos con tecnología para reducir costos, errores y riesgos de negocio.",
     primaryCta: { label: "Agendar Consulta", href: "#contacto" },
